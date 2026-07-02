@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UK Policy Engagement Readout — 9–25 June 2026</title>
+    <style>
+    :root{--background:#fff;--foreground:#0a0a0a;--card:#fff;--muted:#f5f5f5;--muted-foreground:#737373;--primary:#2563eb;--primary-foreground:#fff;--border:#e5e5e5;--destructive:#dc2626;--destructive-foreground:#fff;--success:#16a34a;--warning:#d97706;--info:#2563eb;}
+    @media(prefers-color-scheme:dark){:root{--background:#0a0a0a;--foreground:#fafafa;--card:#141414;--muted:#1c1c1c;--muted-foreground:#a3a3a3;--primary:#3b82f6;--primary-foreground:#fff;--border:#262626;--destructive:#ef4444;--destructive-foreground:#fff;--success:#22c55e;--warning:#f59e0b;--info:#3b82f6;}}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{line-height:1.5;-webkit-font-smoothing:antialiased}
+    .bg-background{background:var(--background)}.text-foreground{color:var(--foreground)}.text-muted-foreground{color:var(--muted-foreground)}.min-h-screen{min-height:100vh}.max-w-4xl{max-width:56rem}.mx-auto{margin:0 auto}.px-4{padding:0 1rem}.py-10{padding:2.5rem 0}.space-y-6>*+*{margin-top:1.5rem}.space-y-4>*+*{margin-top:1rem}.text-xs{font-size:.75rem;line-height:1rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.font-medium{font-weight:500}.font-semibold{font-weight:600}.font-bold{font-weight:700}.tracking-tight{letter-spacing:-.025em}
+</style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      body { font-family: 'Inter', system-ui, sans-serif; }
+
+      /* ── Hero header ── */
+      .hero {
+        background: linear-gradient(135deg, #1e3a5f 0%, #2d1f4e 50%, #1a1a2e 100%);
+        padding: 36px 32px 28px;
+        border-radius: 16px;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      .hero .hero-kicker {
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.6;
+        margin-bottom: 6px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        margin: 0 0 4px;
+      }
+      .hero .hero-sub {
+        font-size: 0.9rem;
+        opacity: 0.7;
+        font-weight: 400;
+      }
+
+      /* ── Events attended grid ── */
+      .events-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .events-col {
+        padding: 16px 18px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--card);
+      }
+      .events-col .col-title {
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: var(--muted-foreground);
+        margin: 0 0 10px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--border);
+      }
+      .ev-row {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        padding: 4px 0;
+        font-size: 0.84rem;
+        line-height: 1.5;
+      }
+      .ev-row .ev-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--primary);
+        flex-shrink: 0;
+        margin-top: 6px;
+      }
+      .ev-row .ev-context {
+        font-size: 0.72rem;
+        color: var(--muted-foreground);
+      }
+
+      /* ── Scorecard ── */
+      .scorecard {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 8px;
+      }
+      .score-item {
+        text-align: center;
+        padding: 18px 8px 14px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        position: relative;
+        overflow: hidden;
+      }
+      .score-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary), var(--info));
+        opacity: 0.6;
+      }
+      .score-item .num {
+        font-size: 1.6rem;
+        font-weight: 800;
+        line-height: 1;
+        color: var(--primary);
+      }
+      .score-item .lbl {
+        font-size: 0.62rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-top: 6px;
+        color: var(--muted-foreground);
+      }
+
+      /* ── Pull-stat badges ── */
+      .pull-stat {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 2px 9px;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        border: 1px solid var(--border);
+        background: var(--muted);
+        white-space: nowrap;
+      }
+      .pull-stat .n { color: var(--primary); font-weight: 700; }
+
+      /* ── Takeaway cards ── */
+      .takeaway {
+        padding: 16px 20px;
+        border-left: 3px solid var(--primary);
+        border-radius: 0 10px 10px 0;
+        background: var(--card);
+        border-top: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+      .takeaway h4 { margin: 0 0 8px; font-size: 0.95rem; }
+      .takeaway .t-detail {
+        margin: 0;
+        font-size: 0.84rem;
+        color: var(--muted-foreground);
+        line-height: 1.6;
+      }
+
+      /* ── Insight boxes (not-public intel) ── */
+      .insight-box {
+        border-left: 3px solid var(--warning);
+        padding: 12px 16px;
+        border-radius: 0 8px 8px 0;
+        background: var(--card);
+        margin: 10px 0;
+      }
+      .insight-box .tag {
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--warning);
+        margin-bottom: 4px;
+      }
+      .insight-box p { margin: 0; font-size: 0.84rem; line-height: 1.55; }
+      .insight-box .src {
+        font-size: 0.72rem;
+        color: var(--muted-foreground);
+        margin-top: 6px;
+      }
+
+      /* ── Takeaway source tags ── */
+      .t-sources {
+        margin: 10px 0 0;
+        font-size: 0.72rem;
+        color: var(--muted-foreground);
+        line-height: 1.8;
+      }
+      .t-sources .src-pill {
+        display: inline-block;
+        padding: 1px 8px;
+        border-radius: 999px;
+        background: var(--muted);
+        font-weight: 500;
+        margin: 0 2px 3px 0;
+        white-space: nowrap;
+      }
+
+      /* ── Quote blocks ── */
+      .quote-block {
+        font-style: italic;
+        padding: 8px 16px;
+        border-left: 2px solid var(--muted-foreground);
+        margin: 10px 0;
+        font-size: 0.84rem;
+        color: var(--muted-foreground);
+        line-height: 1.5;
+      }
+      .quote-block .attr {
+        font-style: normal;
+        font-weight: 600;
+        color: var(--foreground);
+      }
+
+      /* ── Collapsible event cards ── */
+      details.event-card {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+        background: var(--card);
+      }
+      .event-summary {
+        padding: 14px 18px;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: background 0.15s;
+      }
+      .event-summary:hover { background: var(--muted); }
+      .event-summary::before {
+        content: '▸';
+        font-size: 0.85rem;
+        transition: transform 0.2s;
+        color: var(--muted-foreground);
+        flex-shrink: 0;
+      }
+      details.event-card[open] .event-summary::before { transform: rotate(90deg); }
+      .event-body {
+        padding: 0 18px 18px;
+        border-top: 1px solid var(--border);
+      }
+      .event-meta {
+        font-size: 0.75rem;
+        color: var(--muted-foreground);
+        margin-left: auto;
+        font-weight: 400;
+        white-space: nowrap;
+      }
+      .event-oneliner {
+        font-size: 0.82rem;
+        color: var(--muted-foreground);
+        font-weight: 400;
+        flex: 1;
+      }
+      .ev-list {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        font-size: 0.84rem;
+        line-height: 1.7;
+        color: var(--muted-foreground);
+      }
+      .ev-list li { margin-bottom: 3px; }
+
+      /* ── Competitive table ── */
+      .comp-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: 0.82rem;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .comp-table th {
+        background: var(--muted);
+        padding: 9px 12px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--muted-foreground);
+        border-bottom: 1px solid var(--border);
+      }
+      .comp-table td {
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+      .comp-table tr:last-child td { border-bottom: none; }
+
+      /* ── Action items ── */
+      .action-item {
+        padding: 12px 16px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .action-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: var(--primary-foreground);
+        font-size: 0.7rem;
+        font-weight: 700;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .action-item .act-body p { margin: 0; }
+      .action-item .act-title { font-size: 0.88rem; font-weight: 600; }
+      .action-item .act-desc { font-size: 0.8rem; color: var(--muted-foreground); margin-top: 3px; }
+      .action-item .act-owner { font-size: 0.72rem; color: var(--muted-foreground); margin-top: 4px; }
+
+      /* ── Section headers ── */
+      .sh {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 2px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--border);
+      }
+      .sh-icon { font-size: 1.2rem; }
+
+      /* ── Attr tags ── */
+      .attr-tag {
+        display: inline-block;
+        font-size: 0.65rem;
+        font-weight: 600;
+        padding: 1px 7px;
+        border-radius: 999px;
+        background: var(--muted);
+        color: var(--muted-foreground);
+        vertical-align: middle;
+      }
+      .attr-tag.comp {
+        background: hsl(0 70% 50% / 0.12);
+        color: var(--destructive);
+      }
+
+      /* ── Week divider ── */
+      .week-div {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin: 24px 0 12px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted-foreground);
+      }
+      .week-div::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+      /* ── Deadline alert ── */
+      .deadline-alert {
+        padding: 14px 18px;
+        border-radius: 10px;
+        border: 1px solid var(--warning);
+        background: var(--card);
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 0.84rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .deadline-alert::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 3px;
+        background: var(--warning);
+      }
+
+      /* ── Tracking table ── */
+      .track-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: 0.78rem;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .track-table th {
+        background: var(--muted);
+        padding: 8px 10px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--muted-foreground);
+        border-bottom: 1px solid var(--border);
+        white-space: nowrap;
+      }
+      .track-table td {
+        padding: 8px 10px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+      .track-table tr:last-child td { border-bottom: none; }
+      .track-table tr:hover { background: var(--muted); }
+      .p-crit { color: var(--destructive); font-weight: 700; }
+      .p-high { color: var(--warning); font-weight: 600; }
+      .p-med { color: var(--info); font-weight: 500; }
+      .p-low { color: var(--muted-foreground); }
+      .status-cell {
+        width: 18px; height: 18px;
+        border-radius: 4px;
+        border: 2px solid var(--border);
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .track-section td { 
+        background: var(--muted); 
+        font-weight: 700; 
+        font-size: 0.7rem; 
+        text-transform: uppercase; 
+        letter-spacing: 0.05em;
+        color: var(--muted-foreground);
+        padding: 6px 10px;
+      }
+
+      /* ── Priority buckets ── */
+      .pri-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+        margin-top: 14px;
+      }
+      .pri-bucket {
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        overflow: hidden;
+      }
+      .pri-header {
+        padding: 10px 14px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .pri-header.p1 { background: hsl(0 70% 50% / 0.1); color: var(--destructive); border-bottom: 2px solid var(--destructive); }
+      .pri-header.p2 { background: hsl(30 80% 50% / 0.1); color: var(--warning); border-bottom: 2px solid var(--warning); }
+      .pri-header.p3 { background: hsl(210 60% 50% / 0.1); color: var(--info); border-bottom: 2px solid var(--info); }
+      .pri-tag {
+        display: inline-block;
+        padding: 1px 7px;
+        border-radius: 4px;
+        font-size: 0.65rem;
+        font-weight: 700;
+      }
+      .pri-tag.p1 { background: var(--destructive); color: #fff; }
+      .pri-tag.p2 { background: var(--warning); color: #fff; }
+      .pri-tag.p3 { background: var(--info); color: #fff; }
+      .pri-body { padding: 10px 14px; }
+      .pri-item {
+        padding: 6px 0;
+        font-size: 0.8rem;
+        line-height: 1.4;
+        border-bottom: 1px solid var(--border);
+      }
+      .pri-item:last-child { border-bottom: none; }
+      .pri-item .pri-label { font-weight: 600; font-size: 0.75rem; color: var(--muted-foreground); }
+      .pri-item .pri-takeaway { margin-top: 2px; }
+
+      /* ── Inform tag ── */
+      .inform-line {
+        margin: 8px 0 0;
+        padding: 8px 12px;
+        border-radius: 6px;
+        background: var(--muted);
+        font-size: 0.78rem;
+        line-height: 1.5;
+        color: var(--muted-foreground);
+      }
+      .inform-line strong { color: var(--foreground); }
+
+      /* ── Sensitivity box ── */
+      .sensitivity-box {
+        padding: 10px 14px;
+        border-left: 3px solid var(--destructive);
+        border-radius: 0 8px 8px 0;
+        background: var(--card);
+        margin: 8px 0;
+        font-size: 0.82rem;
+      }
+      .sensitivity-box .stag {
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--destructive);
+        margin-bottom: 4px;
+      }
+    </style>
+  </head>
+  <body class="bg-background text-foreground min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-10 space-y-6">
+
+      <!-- ═══ HERO HEADER ═══ -->
+      <div class="hero">
+        <p class="hero-kicker">Chainalysis</p>
+        <h1>Engagement Readout</h1>
+        <p class="hero-sub">9–25 June 2026 &nbsp;·&nbsp; Jordan Wain &amp; Matthias B-L</p>
+      </div>
+
+      <!-- ═══ SCORECARD ═══ -->
+      <div class="scorecard">
+        <div class="score-item"><div class="num">15</div><div class="lbl">Events &amp; Sessions</div></div>
+        <div class="score-item"><div class="num">12+</div><div class="lbl">Bilateral Meetings</div></div>
+        <div class="score-item"><div class="num">16</div><div class="lbl">Private Intel Items</div></div>
+        <div class="score-item"><div class="num">3</div><div class="lbl">Policy Outcomes</div></div>
+        <div class="score-item"><div class="num">3</div><div class="lbl">Competitors Observed</div></div>
+        <div class="score-item"><div class="num">19</div><div class="lbl">Follow-up Actions</div></div>
+      </div>
+
+      <!-- ═══ EVENTS ATTENDED ═══ -->
+      <div class="events-grid">
+        <div class="events-col">
+          <p class="col-title">Week 1 — 9–17 June · London &amp; Frankfurt</p>
+          <div class="ev-row"><span class="ev-dot"></span><div>AMLA Inaugural Conference <span class="ev-context">· Frankfurt · James Lee on panel</span></div></div>
+          <div class="ev-row"><span class="ev-dot"></span><div>DMC Cross-Sectoral Taskforce <span class="ev-context">· Guildhall · only analytics co.</span></div></div>
+          <div class="ev-row"><span class="ev-dot"></span><div>RUSI Sanctions — Crypto &amp; Evasion <span class="ev-context">· Brussels</span></div></div>
+          <div class="ev-row"><span class="ev-dot"></span><div>RUSI Stablecoins — Opportunities <span class="ev-context">· Brussels</span></div></div>
+          <div class="ev-row"><span class="ev-dot"></span><div>GBBC — Agentic Finance Panel <span class="ev-context">· London · Jordan panellist</span></div></div>
+        </div>
+        <div class="events-col">
+          <p class="col-title">Week 2 — 23–25 June · PZF Zurich</p>
+          <div class="ev-row"><span class="ev-dot"></span><div>PZF Main Stage sessions <span class="ev-context">· SNB, UBS, Simon Taylor, Tether, Circle</span></div></div>
+          <div class="ev-row"><span class="ev-dot"></span><div>PZF Roundtables ×2 <span class="ev-context">· Tokenised FMs · Stablecoins</span></div></div>
+          <div class="ev-row"><span class="ev-dot"></span><div>PZF Matthias Panel <span class="ev-context">· w/ Kraken, Paxos</span></div></div>
+          <div class="ev-row"><span class="ev-dot"></span><div>Stripe Closed-Door · BC4EU Forum</div></div>
+          <div class="ev-row"><span class="ev-dot"></span><div>GBBC RMF Roundtable + Evening <span class="ev-context">· Cardano, Circle, GLEIF</span></div></div>
+          <div class="ev-row"><span class="ev-dot"></span><div>IBM Showcase · BIS Mandala <span class="ev-context">· Jordan only · Thu PM</span></div></div>
+          <div class="ev-row"><span class="ev-dot"></span><div>12+ bilateral meetings <span class="ev-context">· incl. SEC dinner</span></div></div>
+          <div class="ev-row"><span class="ev-dot"></span><div>Notabene MiCA Webinar <span class="ev-context">· Matthias panellist · w/ Bitpanda, Fireblocks</span></div></div>
+        </div>
+      </div>
+
+      <!-- ═══ DEADLINE ALERT ═══ -->
+      <div class="deadline-alert">
+        <span style="font-size:1.2rem;">⏰</span>
+        <div>
+          <p style="margin:0;font-weight:600;">Upcoming consultation deadlines</p>
+          <p class="text-xs text-muted-foreground" style="margin:3px 0 0;">
+            <strong>FCA/BoE Tokenisation Call for Input</strong> — 3 Jul &nbsp;·&nbsp; <strong>EU AI Act full application</strong> — 2 Aug
+            &nbsp;·&nbsp; <span class="pull-stat"><span class="n">293</span> tracked</span>
+            <span class="pull-stat"><span class="n">10</span> submitted</span>
+            <span class="pull-stat"><span class="n">11</span> open</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- ═══ EXECUTIVE SUMMARY ═══ -->
+      <div style="padding:20px 24px;border-radius:12px;border:1px solid var(--border);background:var(--card);position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--info),var(--primary));opacity:0.7;"></div>
+        <p class="text-xs font-semibold text-muted-foreground" style="text-transform:uppercase;letter-spacing:0.08em;margin:0 0 10px;">Executive Summary</p>
+
+        <p class="text-xs font-semibold text-muted-foreground" style="text-transform:uppercase;letter-spacing:0.06em;margin:0 0 8px;">Outcomes — what we achieved</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
+          <div style="padding:10px 14px;border-radius:8px;background:var(--muted);font-size:0.82rem;line-height:1.5;">
+            <strong style="color:var(--foreground);">✓ DMC Phase 1 report</strong><br>
+            <span class="text-muted-foreground">Compliance argument now in UK's tokenisation strategy. Without us, zero compliance dimension.</span>
+          </div>
+          <div style="padding:10px 14px;border-radius:8px;background:var(--muted);font-size:0.82rem;line-height:1.5;">
+            <strong style="color:var(--foreground);">✓ EEAS intelligence-sharing</strong><br>
+            <span class="text-muted-foreground">Head of EU Sanctions invited us to share intel. Direct input to 21st sanctions package.</span>
+          </div>
+          <div style="padding:10px 14px;border-radius:8px;background:var(--muted);font-size:0.82rem;line-height:1.5;">
+            <strong style="color:var(--foreground);">✓ SEC follow-up requested</strong><br>
+            <span class="text-muted-foreground">Crypto Task Force Chair wants on/off-chain data matching demo. Highest-value PZF channel.</span>
+          </div>
+          <div style="padding:10px 14px;border-radius:8px;background:var(--muted);font-size:0.82rem;line-height:1.5;">
+            <strong style="color:var(--foreground);">✓ Ontology standard-setting</strong><br>
+            <span class="text-muted-foreground">Frontrunning GBBC + Andrew Turner standard-setting work. We define the terms.</span>
+          </div>
+        </div>
+
+        <p class="text-xs font-semibold text-muted-foreground" style="text-transform:uppercase;letter-spacing:0.06em;margin:0 0 8px;">What we pushed — and what landed</p>
+        <p class="text-sm" style="margin:0 0 10px;line-height:1.7;">
+          We drove six arguments consistently across every room. Each one landed with measurable impact:
+        </p>
+        <ul style="margin:0 0 14px;padding-left:20px;font-size:0.84rem;line-height:1.8;color:var(--muted-foreground);">
+          <li><strong style="color:var(--foreground);">Compliance must be designed into tokenisation — not bolted on.</strong> DMC Taskforce secretariat had zero compliance in their draft. Our argument is now in the Phase 1 report. HSBC independently validated it at PZF: "investor protection will rely as much on the credential that travels with it as the asset."</li>
+          <li><strong style="color:var(--foreground);">On-chain analytics is what issuers and supervisors need.</strong> Pushed at RUSI, PZF, and AMLA. When SocGen asked why analytics providers differ, our T1/T2 framework was the only answer. Bank of Lithuania governor publicly agreed with Matthias. FINMA and SEC both requested follow-ups.</li>
+          <li><strong style="color:var(--foreground);">Data quality is the differentiator — and we should set the standard.</strong> T1/T2 (structural grouping vs entity attribution) gave regulators a framework nobody else offered. Ontology piece is frontrunning GBBC and Andrew Turner's convergent work. If AMLA sets analytics benchmarks, we defined them.</li>
+          <li><strong style="color:var(--foreground);">Compliance infrastructure has matured faster than policymakers realise.</strong> Garantex→HTX: 3 years of post-designation operation → 24-hour industry response. 3 addresses → 500K identifiable. Visibly shifted the room at RUSI.</li>
+          <li><strong style="color:var(--foreground);">AML frameworks assume a human sent the transaction. Agents break that.</strong> Jordan coined "The Machine Sender Problem" and backed it with 100M+ x402 transactions — the only empirical evidence in any room. MAS is already redesigning payments for agentic commerce.</li>
+          <li><strong style="color:var(--foreground);">"Under-implementation, not over-regulation."</strong> Reframed the competitiveness debate at RUSI. Proposed AMLA as ecosystem monitor ("no jurisdiction has done this yet"). Cut through the deregulation noise.</li>
+        </ul>
+
+        <p class="text-xs font-semibold text-muted-foreground" style="text-transform:uppercase;letter-spacing:0.06em;margin:0 0 8px;">What we said publicly — panels and speaking</p>
+        <ul style="margin:0 0 14px;padding-left:20px;font-size:0.84rem;line-height:1.8;color:var(--muted-foreground);">
+          <li><strong style="color:var(--foreground);">GBBC Agentic Finance</strong> (Jordan, panellist) — coined "The Machine Sender Problem," presented 100M+ x402 transaction data, argued blockchain is a compliance advantage for agentic commerce</li>
+          <li><strong style="color:var(--foreground);">PZF Mainstage</strong> (Matthias, panellist w/ Kraken, Paxos) — ecosystem monitoring capabilities, supervisors using on-chain data to support market adoption. Bank of Lithuania governor agreed publicly.</li>
+          <li><strong style="color:var(--foreground);">AMLA Conference</strong> (James Lee, panellist w/ Europol, BIS) — blockchain analytics as practical tool for risk-based supervision and proactive prevention</li>
+          <li><strong style="color:var(--foreground);">Notabene MiCA Webinar</strong> (Matthias, panellist w/ Bitpanda, Fireblocks, VASPnet) — MiCA moved Europe from fragmentation to credible common baseline; supervisors need on-chain analytics for "24/7 due diligence"; on-chain data can estimate stablecoin holder geography with meaningful accuracy (56–67% through attributed services, 189M wallet clusters globally); MiCA review should focus on supervisory capacity not reopening architecture</li>
+          <li><strong style="color:var(--foreground);">GBBC/Cardano Evening</strong> (Jordan) — delivered Machine Sender Problem lines to Circle, GLEIF, GBBC audience; discussed ontology framework with GBBC</li>
+        </ul>
+
+        <p class="text-xs font-semibold text-muted-foreground" style="text-transform:uppercase;letter-spacing:0.06em;margin:0 0 8px;">Access — where we were, competitors weren't</p>
+        <p class="text-sm" style="margin:0 0 4px;line-height:1.7;">
+          Only analytics company at DMC (50 orgs). Only firm invited by EEAS. Only provider in closed-door roundtables with BoE, MAS, HSBC, StanChart, Stripe, Amazon. Panels at both AMLA and GBBC. 12+ PZF bilaterals including SEC dinner. Elliptic had one mainstage panel; TRM had one workshop. <strong>Neither was in the policy-shaping rooms.</strong>
+        </p>
+      </div>
+
+      <!-- ═══ PRIORITY MAPPING ═══ -->
+      <div>
+        <div class="sh">
+          <span class="sh-icon">🔺</span>
+          <h2 class="text-lg font-bold" style="margin:0;">Priority Mapping</h2>
+        </div>
+        <p class="text-xs text-muted-foreground" style="margin-top:2px;">How the intelligence maps to our strategic priorities — ranked by urgency and impact</p>
+
+        <div class="pri-grid">
+          <div class="pri-bucket">
+            <div class="pri-header p1"><span class="pri-tag p1">P1</span> Key Priority — Act Now</div>
+            <div class="pri-body">
+              <div class="pri-item">
+                <div class="pri-label">Crypto & Stablecoin</div>
+                <div class="pri-takeaway">16 exchanges live-issuing. 3 frameworks advancing. Tokenised deposits rising. Tether MiCA 2 re-entry.</div>
+              </div>
+              <div class="pri-item">
+                <div class="pri-label">AML/CFT & Travel Rule</div>
+                <div class="pri-takeaway">EEAS invitation. AMLA 40 entities. Garantex→HTX maturation. 21st sanctions package.</div>
+              </div>
+              <div class="pri-item">
+                <div class="pri-label">Data Quality & Standards</div>
+                <div class="pri-takeaway">T1/T2 framework. Ontology standard-setting. AMLA benchmarking. Mandala integration.</div>
+              </div>
+              <div class="pri-item">
+                <div class="pri-label">AI</div>
+                <div class="pri-takeaway">Machine Sender Problem. MAS agentic payments. 100M+ x402 evidence.</div>
+              </div>
+              <div class="pri-item">
+                <div class="pri-label">Economic Warfare</div>
+                <div class="pri-takeaway">EEAS intel sharing. A7 expanding to Africa. HTX 24-hour response.</div>
+              </div>
+              <div class="pri-item">
+                <div class="pri-label">Fraud & Scams</div>
+                <div class="pri-takeaway">AI agents as fraud vector. MasterCard embedding risk controls. AMLA pattern detection.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pri-bucket">
+            <div class="pri-header p2"><span class="pri-tag p2">P2</span> Secondary — Monitor</div>
+            <div class="pri-body">
+              <div class="pri-item">
+                <div class="pri-label">Cybersecurity</div>
+                <div class="pri-takeaway">IBM privacy network — no supervisory access. ZKP architecture choices matter now.</div>
+              </div>
+              <div class="pri-item">
+                <div class="pri-label">Prediction Markets</div>
+                <div class="pri-takeaway">Crypto.com going heavy. Polymarket→SEC meeting. ESMA MiFID warning coming.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pri-bucket">
+            <div class="pri-header p3"><span class="pri-tag p3">P3</span> Watching Brief</div>
+            <div class="pri-body">
+              <div class="pri-item">
+                <div class="pri-label">DeFi</div>
+                <div class="pri-takeaway">FATF report finalised — DINOs as VASPs. <em>May move to P2.</em></div>
+              </div>
+              <div class="pri-item">
+                <div class="pri-label">Tax</div>
+                <div class="pri-takeaway">No intel this period.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ STRATEGIC TAKEAWAYS ═══ -->
+      <div>
+        <div class="sh">
+          <span class="sh-icon">🎯</span>
+          <h2 class="text-lg font-bold" style="margin:0;">Strategic Takeaways</h2>
+        </div>
+        <p class="text-xs text-muted-foreground" style="margin-top:2px;">Cross-cutting themes — ranked by priority. Each includes internal inform recommendations.</p>
+
+        <div class="space-y-4" style="margin-top:14px;">
+
+          <div class="takeaway" style="border-left-color:var(--warning);border-left-width:4px;">
+            <h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> <span style="background:linear-gradient(90deg,var(--warning),var(--primary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800;">NEW</span> 1. Tokenisation and tokenised deposits are live — compliance infrastructure is the bottleneck, and it's ours to fill</h4>
+            <p class="t-detail">
+              Tokenised bank deposits emerged as a distinct priority that deserves focus alongside stablecoins and securities tokenisation. The BoE Digital Securities Sandbox has <span class="pull-stat"><span class="n">16</span> exchanges</span> preparing to live-issue securities. StanChart — the only GSIB live across all asset types — described bolting a fiat leg onto digital transactions as <strong>"not scalable."</strong> StanChart and HSBC are both launching stablecoins in Hong Kong by year-end. SWIFT is running an MVP on tokenised deposits by end of June (messaging only, no settlement). MAS is issuing a wholesale CBDC bill for tokenised deposit settlement. UBS's Qivalis project is building interoperable stablecoins alongside tokenised bonds and gold.
+            </p>
+            <div class="quote-block">
+              "New rails don't remove the need for market integrity. Investor protection will rely as much on the credential that travels with it as with the asset."
+              <span class="attr">— John O'Neill, HSBC</span>
+            </div>
+            <p class="t-detail">
+              The critical insight: <strong>stablecoins and tokenised deposits are not substitutes — they are different use cases.</strong> Stablecoins are open-loop and permissionless; tokenised deposits work within banks or clearing networks. The compliance gap is in both. Banking Circle's proof-of-reserve attestation travelling with transactions (BIS/MAS MVP) points directly at the tooling we should build. Paxos: "GENIUS-compliant stables will drive tokenisation" — stablecoin regulation will pull tokenised deposits into mainstream. GFTN has invited Chainalysis to help build a tokenisation blueprint per jurisdiction and to join the SFF lineup. <strong>GSIBs are building now. Compliance tooling is what they're missing. This is not a future topic.</strong>
+            </p>
+            <div class="t-sources">Sources: <span class="src-pill">DMC Taskforce</span> <span class="src-pill">PZF Tokenised FM Roundtable</span> <span class="src-pill">PZF Main Stage (Simon Taylor, UBS CEO)</span> <span class="src-pill">Stripe Closed Door (Paxos, Banking Circle)</span> <span class="src-pill">Matthias bilaterals (SWIFT, GFTN, MAS)</span></div>
+            <div class="inform-line"><strong>→ Inform:</strong> <strong>Product (critical)</strong> — credential-with-asset tooling + tokenised deposit compliance are immediate market needs. <strong>Sales</strong> — StanChart + HSBC HK near-term; DMC members are clients. <strong>Strategy</strong> — elevate tokenised deposits alongside stablecoins. <strong>BD</strong> — GFTN SFF invitation, SWIFT scaling.</div>
+          </div>
+
+          <div class="takeaway">
+            <h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> 2. Stablecoin frameworks are converging — but multi-issuance and cross-border friction remain unsolved</h4>
+            <p class="t-detail">
+              Three jurisdictions advancing simultaneously: UK (BoE systemic stablecoins), EU (MiCA / MiCA 2), US (GENIUS Act). The BoE's most innovative feature is a liquidity facility allowing issuers to liquidate 70% of sovereign debt reserves if private markets fail, with a walked-back holding limit and a ~£40bn issuance cap. Patrick Hansen (Circle) identified three cross-border friction dimensions: classification, treatment as money, and foreign stablecoin recognition. Multi-issuance is the key bottleneck — Ripple is blocked by Luxembourg regulators citing legal uncertainty; Coinbase flagged Brazil and Canada debating the same issue. Paxos observed redemption rights matter in theory but "nobody uses them in practice" and compliance with many jurisdictions is "so expensive we can't do this" — pointing directly at Tether. Paradigm's Justin Slaughter gave CLARITY <span class="pull-stat"><span class="n">&lt;20%</span> odds in July</span>.
+            </p>
+            <div class="t-sources">Sources: <span class="src-pill">PZF Stablecoin Frameworks RT</span> <span class="src-pill">Stripe Closed Door</span> <span class="src-pill">PZF CEO Dialogue</span> <span class="src-pill">RUSI Stablecoins Workshop</span> <span class="src-pill">Matthias bilaterals (BoE, Circle)</span></div>
+            <div class="inform-line"><strong>→ Inform:</strong> <strong>Product</strong> — multi-issuance tracking, reserve monitoring. <strong>Legal</strong> — MiCA 2 reserve changes. <strong>EMEA Sales</strong> — Ripple geolocation opportunity. <strong>Research</strong> — BoE liquidity facility, CLARITY &lt;20%.</div>
+          </div>
+
+          <div class="takeaway">
+            <h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> 3. Privacy infrastructure is outpacing supervisory capability — architecture choices now determine compliance outcomes</h4>
+            <p class="t-detail">
+              Two contrasting ZKP models emerged. IBM is building a privacy network on Hyperledger Fabric with <strong>no view to third-party visibility</strong> — optimised for CBDC use cases, pushing compliance entirely to individual bank perimeters. BIS Project Mandala takes the opposite approach: peer-to-peer ZKP-based compliance pre-validation that integrates with existing compliance systems and allows re-verification of proofs at each hop without re-running checks. The Mandala architecture explicitly names "existing compliance solutions" as integration points — a direct Chainalysis opportunity. The contrast matters: privacy tech can either enable or undermine compliance depending on choices being made right now.
+            </p>
+            <div class="t-sources">Sources: <span class="src-pill">IBM Showcase (Jordan)</span> <span class="src-pill">BIS Side Event — Project Mandala (Jordan)</span></div>
+            <div class="inform-line"><strong>→ Inform:</strong> <strong>Product</strong> — Mandala integration is a concrete opportunity (7 central banks). <strong>Research</strong> — IBM supervisory gap = our positioning. <strong>GovTech</strong> — DNB contacts obtained.</div>
+          </div>
+
+          <div class="takeaway">
+            <h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> 4. Regulators are actively seeking on-chain analytics capability</h4>
+            <p class="t-detail">
+              AMLA used its first conference to position technology, analytics and AI at the centre of EU AML/CFT supervision — Commissioner Albuquerque signalled AMLA will lead globally including at FATF, and James Lee made the case for blockchain analytics on Panel 3. SEC Crypto Task Force Chair Richard Gabbert expressed strong interest in matching on-chain and off-chain data for market abuse detection, noting assets will be "multi-dimensional" requiring all venues to be monitored. FINMA's innovation team discussed market abuse use cases for CASPs and wants a follow-up Chainalysis presentation. Turkey's TUBITAK is building its own analytics — both opportunity and competitive signal. The Bank of Lithuania's governor publicly agreed with Matthias's points on supervisors using on-chain data for market adoption. IMF is developing stablecoin issuer data standards via their Data Gap Analysis. Standard Chartered's Rene Michau framed the problem perfectly at the PZF TRM workshop:
+            </p>
+            <div class="quote-block">
+              "Imagine a bank operating blockchain wallets on public chains — a supervisor calls and asks: can you demonstrate you knew who owned that address, the agent had permission, and you didn't disclose PII?"
+              <span class="attr">— Rene Michau, Standard Chartered</span>
+            </div>
+            <div class="t-sources">Sources: <span class="src-pill">AMLA Conference</span> <span class="src-pill">Matthias bilaterals (SEC, FINMA, TUBITAK, IMF)</span> <span class="src-pill">PZF Matthias Panel</span> <span class="src-pill">PZF Workshop — TRM Labs</span> <span class="src-pill">PZF CEO Dialogue</span></div>
+            <div class="inform-line"><strong>→ Inform:</strong> <strong>GovTech/Sales</strong> — SEC, FINMA, AMLA are live opportunities. <strong>Marketing</strong> — publish T1/T2 + ontology before AMLA sets benchmarks. <strong>Product</strong> — TUBITAK building own analytics (competitive signal).</div>
+          </div>
+
+          <div class="takeaway">
+            <h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> 5. Market structure is splitting: retail dead, institutional surging, payments growing</h4>
+            <p class="t-detail">
+              Every exchange at PZF described retail as "effectively dead," yet institutional flows are picking up materially — one Swiss private bank contact reported sharply rising ZCash demand. Stablecoin volumes remain steady despite the crypto downturn, signalling a structural shift toward payments. EUR stablecoins now ~2% of volume (from near zero), with more launching. B2B cross-border is the biggest use case (Asia-Pacific, global south beneficiaries). US banks have more deposits than ever — not a deposit flight story. Correspondent banking for Tier 2/3 banks is very expensive, making stablecoins a genuine alternative.
+            </p>
+            <div class="t-sources">Sources: <span class="src-pill">PZF Main Stage (Simon Taylor)</span> <span class="src-pill">Matthias bilaterals</span> <span class="src-pill">PZF dinner intel</span></div>
+            <div class="inform-line"><strong>→ Inform:</strong> <strong>Risk</strong> — ZCash institutional surge (privacy coin implications). <strong>Product</strong> — EUR stablecoin growth = more issuers. <strong>Sales</strong> — B2B cross-border APAC is where demand will come.</div>
+          </div>
+
+          <div class="takeaway">
+            <h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> 6. Agentic finance is the next regulatory frontier — and crypto is the rail</h4>
+            <p class="t-detail">
+              MAS is revamping Singapore's payments system specifically for agentic payments. MasterCard is embedding AI risk controls into agentic commerce at network level. Multiple panels agreed crypto rails are the likely infrastructure for agent-to-agent value transfer, though activity today is minimal. UBS expects a high failure rate implementing agents but "some will exceed expectations exponentially." Amazon sees programmability and agentic use as key drivers for stablecoin adoption — "only if rails are regulated." Chris Brummer (Georgetown) noted that fiduciary duties may need to be decomposed into "programmable constituent parts."
+            </p>
+            <div class="t-sources">Sources: <span class="src-pill">Agentic Finance Panel (Wk 1)</span> <span class="src-pill">TRM Workshop (MasterCard)</span> <span class="src-pill">PZF Main Stage (UBS CEO)</span> <span class="src-pill">Stripe Closed Door (Amazon)</span> <span class="src-pill">Matthias bilaterals (MAS)</span></div>
+            <div class="inform-line"><strong>→ Inform:</strong> <strong>Product</strong> — agent monitoring is an emerging requirement (MAS building now). <strong>Research</strong> — position paper before EU AI Act (2 Aug). <strong>Marketing</strong> — 100M+ x402 is unique and quotable.</div>
+          </div>
+
+          <div class="takeaway">
+            <h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> 7. Tether is repositioning for Europe — and MiCA 2 is the target</h4>
+            <p class="t-detail">
+              Tether has hired local EU policy and gov affairs staff and asked to join BC4EU — causing board-level debate. If MiCA 2 removes obligatory bank deposits from reserve requirements, Tether may re-enter the EU directly and seek to shape the regulation. On stage, Tether CEO claimed "we did more for financial inclusion than all NGOs" and "proved we can redeem 20% overnight — banks can't do that." Behind the scenes, there is industry consensus that USDT has the highest demand (Banking Circle) — raising the question of whether MiCA is working as intended.
+            </p>
+            <div class="t-sources">Sources: <span class="src-pill">PZF Tether Fireside</span> <span class="src-pill">BC4EU Transatlantic Forum</span> <span class="src-pill">Stripe Closed Door (Banking Circle)</span> <span class="src-pill">Matthias bilaterals (Tether EMEA)</span></div>
+            <div class="inform-line"><strong>→ Inform:</strong> <strong>CS</strong> — Tether is a client sensitivity; MiCA 2 = new tooling demand. <strong>EMEA Sales</strong> — AMF authorising Binance (French opportunity). <strong>Legal</strong> — MiCA 2 reserve changes reshape EU landscape.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ INSIGHTS NOT AVAILABLE ONLINE ═══ -->
+      <div>
+        <div class="sh">
+          <span class="sh-icon">🔒</span>
+          <h2 class="text-lg font-bold" style="margin:0;">Insights Not Available Online</h2>
+        </div>
+        <p class="text-xs text-muted-foreground" style="margin-top:2px;">From closed roundtables, bilateral conversations, and dinners</p>
+
+        <div class="space-y-4" style="margin-top:14px;">
+
+          <div class="insight-box">
+            <div class="tag">🔒 IBM Showcase — Jordan</div>
+            <p><strong>IBM privacy network has no supervisory visibility.</strong> Built on Hyperledger Fabric with ZKPs, optimised for CBDC use case. No architecture for third-party or supervisor access. IBM says "it's up to banks to perform due diligence." Central banks accept ZKPs, but this pushes compliance entirely to individual bank perimeters — creating a "who secures the perimeter?" problem. Same functional space as Canton Network.</p>
+            <p class="src">Jordan Wain — IBM Showcase, Thu 25 Jun</p>
+          </div>
+
+          <div class="insight-box">
+            <div class="tag">🔒 BIS Strategic Intelligence — Jordan</div>
+            <p><strong>Project Atlas transferred to DNB — only tracking aggregates, no clustering.</strong> Opportunity to reach out and compare aggregate figures with Chainalysis granular data. <strong>Project Mandala</strong> is further along than expected: 7 central bank partners, Phase 2 expanding to multiple corridors, rules engine for jurisdiction-specific compliance in standardised format. Mandala nodes integrate with "existing compliance solutions" — this is the Chainalysis integration point.</p>
+            <p class="src">Jordan Wain — BIS Side Event, Thu 25 Jun</p>
+          </div>
+
+          <div class="insight-box">
+            <div class="tag">🔒 Dinner Intelligence — Matthias</div>
+            <p><strong>US "coalition of the willing":</strong> Coinbase, Kraken, OKX, Crypto.com. <strong>Cyprus</strong> is the jurisdiction for perpetuals (Coinbase, Kraken both positioning). Crypto.com going heavy into prediction markets. <strong>Polymarket</strong> has agreed to present at SEC (with Chris Rice). SEC's Richard Gabbert keen to follow up on market abuse data — 15 years at SEC, married to Japanese national (useful cultural context for APAC).</p>
+            <p class="src">Matthias B-L — PZF dinner, 24 Jun</p>
+          </div>
+
+          <div class="insight-box">
+            <div class="tag">🔒 Tether / MiCA 2 — Matthias</div>
+            <p><strong>Tether actively considering direct EU market entry.</strong> Hired local policy and gov affairs staff. Asked to join Blockchain4Europe — causing board-level debate. If MiCA 2 allows different reserve policy (no obligatory bank deposits), Tether may re-enter. Matthias has catch-up with Tether's EMEA lead scheduled next Wednesday. Even discussed approach with Dante (Circle).</p>
+            <p class="src">Matthias B-L — BC4EU + bilateral conversations</p>
+          </div>
+
+          <div class="insight-box">
+            <div class="tag">🔒 SEC Market Abuse — Matthias</div>
+            <p><strong>SEC Crypto Task Force Chair wants on-chain/off-chain data matching.</strong> Richard Gabbert discussed how assets will be "multi-dimensional" — all venues need monitoring. Most interested in Chainalysis capability to match on-chain and off-chain data. Polymarket also present at dinner; agreed on SEC meeting back in US. Matthias meeting Gabbert again alongside Chief of Staff Chris Rice.</p>
+            <p class="src">Matthias B-L — SEC dinner, PZF</p>
+          </div>
+
+          <div class="insight-box">
+            <div class="tag">🔒 AMF / Binance — Matthias</div>
+            <p><strong>France's AMF actively working to authorise Binance.</strong> Other EU states (notably Greece) lack resources and expertise. Unlikely before 1 July MiCA transition but plan is to grant restricted authorisation. ECB and ESMA pushing back. Separately, <strong>CONSOB Chair Carlo Comporti</strong> is front-runner for new ESMA Chair — very engaged on crypto, stayed entire day at BC4EU.</p>
+            <p class="src">Matthias B-L — bilateral conversations</p>
+          </div>
+
+          <div class="insight-box">
+            <div class="tag">🔒 FATF / ESMA — Matthias</div>
+            <p><strong>FATF DeFi report finalised and landing well.</strong> AML risk-mitigation best practices; DINOs (DeFi in Name Only) treated as VASPs. Publication in coming weeks. Matthias had "very, very long chat" with FATF VACG Chair and facilitated discussions with new customer Uniswap. <strong>ESMA to issue prediction markets warning</strong> — can be MiFID instruments (often binary options). More substantiated guidance in the works, timeline unclear.</p>
+            <p class="src">Matthias B-L — FATF VACG Chair + internal ESMA sources</p>
+          </div>
+
+          <div class="insight-box">
+            <div class="tag">🔒 SWIFT MVP — Matthias</div>
+            <p><strong>SWIFT will run MVP on tokenised deposits by end of June.</strong> Still messaging layer only — payment instruction, no settlement via SWIFT. Need to connect as they scale. Separately, <strong>MAS is revamping Singapore payments for agentic payments</strong> — significant infrastructure redesign underway.</p>
+            <p class="src">Matthias B-L — bilateral conversations</p>
+          </div>
+
+          <div class="insight-box">
+            <div class="tag">🔒 Market Signal — Matthias</div>
+            <p><strong>ZCash demand surging at institutional level.</strong> Head of Tech and Crypto Trading at a Swiss private bank: demand is "massively increasing." While exchanges say retail is dead, institutional flows are picking up materially. Privacy coin institutional demand has direct product and risk assessment implications.</p>
+            <p class="src">Matthias B-L — PZF bilateral</p>
+          </div>
+
+          <div class="insight-box">
+            <div class="tag">🔒 Stripe Closed Door — Matthias</div>
+            <p><strong>Amazon:</strong> 75% of EU SMEs on Amazon trade in USD; FX cost is "huge"; big benefit from stablecoin settlement; agentic + programmability are the drivers — "only if rails are regulated." <strong>Paxos:</strong> GENIUS-compliant stables will drive tokenisation. <strong>MAS at RT:</strong> Global stablecoin issuers should carry per-jurisdiction insurance for redemption rights.</p>
+            <p class="src">Matthias B-L — Stripe Closed Door Session</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ COMPETITIVE POSITIONING ═══ -->
+      <div>
+        <div class="sh">
+          <span class="sh-icon">⚔️</span>
+          <h2 class="text-lg font-bold" style="margin:0;">Competitive Positioning</h2>
+        </div>
+        <p class="text-xs text-muted-foreground" style="margin:2px 0 14px;">Neither competitor was in the same PZF roundtables as Jordan or Matthias. At RUSI, all vendors operated as research authorities — collaborative, not competitive.</p>
+
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th style="width:14%;">Firm</th>
+              <th style="width:22%;">Week 1 (9–17 Jun)</th>
+              <th style="width:22%;">Week 2 — PZF (23–25 Jun)</th>
+              <th style="width:20%;">Key Messages</th>
+              <th style="width:22%;">Assessment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Elliptic</strong><br><span class="attr-tag comp">PZF Bronze</span></td>
+              <td>RUSI Sanctions ✓<br>RUSI Stablecoins ✓<br>Hormuz toll analysis + KYB research</td>
+              <td>CEO <strong>Simone Maini</strong> on Day 3 CEO Dialogue mainstage</td>
+              <td>Risks shifting from compliance to <strong>national security</strong>. "The race" for frameworks.</td>
+              <td>CEO-level mainstage + RUSI presence. National security reframe could position for gov/defence. But not in policy-shaping rooms (no DMC, no PZF roundtables).</td>
+            </tr>
+            <tr>
+              <td><strong>TRM Labs</strong><br><span class="attr-tag comp">PZF Bronze</span></td>
+              <td>—</td>
+              <td>PZF <strong>workshop</strong> "AI and Blockchain" (Liam Glennon mod). Also "From Law to Operations" panel (Day 3).</td>
+              <td>Panel: MasterCard, FINMA, StanChart, FCA, Brummer. <strong>AI + blockchain risk</strong> intersection.</td>
+              <td>Securing Tier 1 FI/regulator panels. Workshop format = longer audience time. No Week 1 presence.</td>
+            </tr>
+            <tr>
+              <td><strong>Crystal</strong></td>
+              <td>RUSI Sanctions ✓<br>KYB/Nobitex ownership</td>
+              <td>—</td>
+              <td colspan="2" style="color:var(--muted-foreground);">RUSI only. Not at PZF, DMC, or GBBC.</td>
+            </tr>
+            <tr style="background:var(--muted);">
+              <td><strong>Chainalysis</strong></td>
+              <td><strong>DMC:</strong> Only analytics co. among 50 orgs — Phase 1 report inclusion.<br><strong>RUSI:</strong> Garantex/HTX, AI bots, T1/T2 framework, 3→500K. EEAS invitation.<br><strong>GBBC:</strong> Jordan panellist — Machine Sender Problem, 100M+ x402.<br><strong>AMLA:</strong> James Lee on panel (w/ Europol, BIS).</td>
+              <td><strong>Jordan:</strong> 2 closed-door RTs, IBM, BIS.<br><strong>Matthias:</strong> Mainstage (Kraken, Paxos), Stripe closed-door, BC4EU, 12+ bilaterals, SEC dinner.</td>
+              <td>Compliance interoperability, on-chain data for supervisors, DMC framework, Machine Sender Problem, ecosystem monitoring.</td>
+              <td style="color:var(--success);font-weight:600;">Deepest policy-shaping access across both weeks. Only firm with outcomes in policy documents (DMC Phase 1) and direct regulator invitations (EEAS, SEC, FINMA). No competitor overlap in our key rooms.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ═══ EVENT DETAIL ═══ -->
+      <div>
+        <div class="sh">
+          <span class="sh-icon">📋</span>
+          <h2 class="text-lg font-bold" style="margin:0;">Event Detail</h2>
+        </div>
+
+        <div class="week-div">Week 1 — 9–17 June · London &amp; Frankfurt</div>
+
+        <div class="space-y-4">
+
+          <details class="event-card">
+            <summary class="event-summary">
+              AMLA Inaugural Conference
+              <span class="event-oneliner">— AMLA positions tech &amp; analytics at heart of EU AML; James Lee on panel</span>
+              <span class="event-meta">9 Jun · Frankfurt</span>
+            </summary>
+            <div class="event-body">
+              <p style="font-size:0.82rem;font-weight:600;margin:12px 0 6px;">AMLA's first conference — "Building Trust, Enhancing Integrity"</p>
+              <ul class="ev-list">
+                <li><strong>Commissioner Albuquerque:</strong> AMLA to take a leading role globally on AML/CFT incl at FATF. Risk-based supervision, analytics and technology to focus resources where risks are highest.</li>
+                <li><strong>MEP Lalucq (Chair ECOFIN):</strong> Crypto "a gift to criminals" — but also explicit call for AMLA to use analytics and pattern detection aggressively. Creates an opening for the traceability argument.</li>
+                <li><strong>Panel 3 (Europol, Chainalysis, BIS, N26, AMLA):</strong> James Lee made the case for blockchain analytics as practical tool to move from reactive to proactive prevention. BIS: "need a network to defeat the network." Clear move toward behavioural, pattern-based approaches.</li>
+                <li><strong>AMLA direct supervision:</strong> <span class="pull-stat"><span class="n">40</span> initial entities</span> (growing), based on activity in 6+ member states. Prep by 2027. Being selected = systemic importance, not AML weakness. Could include CASPs.</li>
+                <li><strong>FINMA rep (Nicolas Vasse):</strong> "I would build an AI-first Authority, but this also has risks" — flagged security, sensitive supervisory data, sovereignty.</li>
+                <li>Repeated theme: data is not insight — analytics and context turn information into action. Quality over volume for SARs/STRs.</li>
+              </ul>
+              <div class="insight-box" style="margin-top:10px;">
+                <div class="tag">🔒 Strategic positioning</div>
+                <p>Best framing for Chainalysis: blockchain analytics supports AMLA's push for risk-based supervision, better intelligence, pattern detection and proactive prevention. Connect to AMLA's wider agenda on trust, data quality, supervisory consistency, and effective implementation.</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="event-card" open>
+            <summary class="event-summary">
+              DMC Cross-Sectoral Taskforce — Meeting 1
+              <span class="event-oneliner">— Only analytics company among ~50 orgs; compliance argument now in Phase 1 report</span>
+              <span class="event-meta">9 Jun · Guildhall</span>
+            </summary>
+            <div class="event-body">
+              <p style="font-size:0.82rem;font-weight:600;margin:12px 0 6px;">Chaired by Chris Woolard CBE · ~50 organisations · <span class="pull-stat"><span class="n">0</span> competitor presence</span></p>
+              <p style="font-size:0.82rem;color:var(--muted-foreground);margin:4px 0 10px;">Attendees: 11 Tier 1 banks (Barclays, Citi, Deutsche, Goldman, HSBC, JP Morgan, Lloyds, Morgan Stanley, StanChart, State Street, UBS), infrastructure (LSEG, DTCC, ICE), crypto (Coinbase, Kraken, Ripple, Circle, Fireblocks), asset managers (BlackRock, Fidelity, Schroders), market makers (Jane Street, Citadel). UK processes £4T in securities/day.</p>
+              <ul class="ev-list">
+                <li><strong>Problem:</strong> Secretariat's draft hypothesis had zero mention of compliance, AML, or sanctions. Without us, no compliance dimension in the UK's foundational tokenisation strategy.</li>
+                <li><strong>Our argument:</strong> "Interoperability isn't just a technology question — it's a legal question, a data standards question, and it's a compliance question." Three asks: (1) compliance as DSS design requirement, (2) compliance interoperability working group in Phase 2, (3) international equivalence frameworks.</li>
+                <li><strong>Outcome:</strong> Compliance comments included in Phase 1 report — topic for Meeting 2.</li>
+                <li>Follow-up email sent to Secretariat with benchmarking data (2–5× tighter thresholds at FIs, 10–20× indirect exposure gap, EMEA strictest)</li>
+                <li>Connects directly to PZF tokenisation roundtable (Week 2) — HSBC's John O'Neill validated the credential-with-asset argument</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="event-card">
+            <summary class="event-summary">
+              RUSI — Crypto and Sanctions Evasion
+              <span class="event-oneliner">— EEAS invited Chainalysis intelligence sharing; Garantex→HTX maturation story landed</span>
+              <span class="event-meta">10 Jun · Brussels</span>
+            </summary>
+            <div class="event-body">
+              <p style="font-size:0.82rem;font-weight:600;margin:12px 0 6px;">~25 participants · Non-attributable · Chaired by Tom Keatinge · <span class="attr-tag comp">Elliptic + Crystal present</span></p>
+              <p style="font-size:0.82rem;color:var(--muted-foreground);margin:4px 0 10px;">Senior attendees: Brice de Schietere (Head of Sanctions, EEAS), Jamie Rainbow (FCDO), European Commission, member state diplomats incl 3 Irish reps (Council presidency)</p>
+              <div class="insight-box" style="margin-bottom:10px;">
+                <div class="tag">🔒 Intelligence not available online</div>
+                <p><strong>HTX designation impact (FCDO first external disclosure):</strong> native assets down ~14% in 2 weeks, Google/Apple removed services, 24-hour industry response. <strong>A7 network expanding to Africa:</strong> Nigeria, Zimbabwe offices; Togo, Madagascar outreach — connected to Russian military/disinformation. <strong>21st sanctions package:</strong> Commission confirmed crypto will feature — input window open.</p>
+              </div>
+              <ul class="ev-list">
+                <li><strong>Our distinctive contributions:</strong> Garantex→HTX maturation (3 years → 24-hour response); AI bots in designation gap (neither competitor raised); address multiplier (<span class="pull-stat"><span class="n">3</span> designated → <span class="n">500K</span> identifiable</span>)</li>
+                <li><strong>Key outcome:</strong> Head of EU Sanctions (EEAS) explicitly invited Chainalysis to share intelligence — direct input channel to highest level of EU sanctions policymaking</li>
+                <li>Elliptic contributed Hormuz toll analysis; Crystal contributed KYB/Nobitex ownership research</li>
+                <li>Client sensitivity: Tether present — navigated carefully. SocGen also present.</li>
+              </ul>
+              <div class="quote-block">
+                "Your contributions added great depth to the discussions. Several EU and member state policymakers have already commented on how useful it was to hear directly from industry."
+                <span class="attr">— RUSI Centre for Finance &amp; Security</span>
+              </div>
+            </div>
+          </details>
+
+          <details class="event-card">
+            <summary class="event-summary">
+              RUSI — Stablecoins: Opportunities &amp; Challenges
+              <span class="event-oneliner">— T1/T2 data quality framework was the only structured answer; AMLA benchmarking opportunity</span>
+              <span class="event-meta">10 Jun · Brussels</span>
+            </summary>
+            <div class="event-body">
+              <p style="font-size:0.82rem;font-weight:600;margin:12px 0 6px;">Non-attributable · Moderated by Tom Keatinge · <span class="attr-tag comp">Elliptic present</span> · Tether + SocGen present (clients)</p>
+              <div class="insight-box" style="margin-bottom:10px;">
+                <div class="tag">🔒 Intelligence not available online</div>
+                <p><strong>No regulator could explain why analytics results differ.</strong> Our T1/T2 framework (structural grouping vs entity attribution) was the only structured answer. If AMLA sets quality benchmarks, we should be the ones who defined them. <strong>Delisting migration data gap acknowledged</strong> — no provider has published this; we committed to follow up. <strong>Privacy pools being discussed seriously</strong> by policymakers as compliance model.</p>
+              </div>
+              <ul class="ev-list">
+                <li><strong>"Under-implementation, not over-regulation"</strong> — reframed the competitiveness debate</li>
+                <li>AMLA as independent ecosystem monitor — "No jurisdiction has done this yet"</li>
+                <li>Pharmacovigilance analogy for secondary market monitoring</li>
+                <li>GENIUS Act: "Not lighter touch — differently structured"</li>
+                <li>"Solving AML by restricting to permissioned networks is like solving financial crime by de-banking"</li>
+                <li>Themes carried directly into PZF stablecoin roundtable and Matthias's bilaterals</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="event-card">
+            <summary class="event-summary">
+              GBBC — Agentic Finance: When AI Agents Move Money
+              <span class="event-oneliner">— Jordan panellist; coined "Machine Sender Problem"; 100M+ x402 txns as evidence</span>
+              <span class="event-meta">16 Jun · London</span>
+            </summary>
+            <div class="event-body">
+              <p style="font-size:0.82rem;font-weight:600;margin:12px 0 6px;">40 min + Q&amp;A · <span class="pull-stat"><span class="n">0</span> competitors</span> · Jordan was a panellist</p>
+              <p style="font-size:0.82rem;color:var(--muted-foreground);margin:4px 0 10px;">Panellists: Jordan Wain (Chainalysis), Felix Haynes (Coinbase/x402), Kat Cloud (Sumsub), Austin Elwood (NatWest). Mod: Sean Murphy (Norton Rose Fulbright). Context: HMT named agentic AI in Payments Forward Plan; FPC asked BoE/FCA for further work; FCA Supercharged Sandbox with NVIDIA.</p>
+              <ul class="ev-list">
+                <li><strong>"The Machine Sender Problem"</strong> — coined this term. AML frameworks assume human initiation. Agents break that assumption.</li>
+                <li><strong>Data:</strong> <span class="pull-stat"><span class="n">100M+</span> x402 transactions</span> tracked; 95% value in $1+ txns (was 49%); 4× conversion; 12× capital inflows. "They developed it. We measured it."</li>
+                <li>Blockchain as compliance advantage — agents are predictable, malicious patterns detectable at scale</li>
+                <li>Both rails (traditional + crypto) converging to same destination</li>
+                <li>"In two years I'd like the UK to have answered where on the autonomy spectrum the guardrails sit"</li>
+                <li>Outcome: GBBC provided free Point Zero Forum tickets. MAS subsequently confirmed at PZF they're redesigning Singapore payments for agentic use.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="week-div">Week 2 — 23–25 June · Zurich · Point Zero Forum</div>
+
+        <div class="space-y-4">
+
+          <!-- ── DAY 1 (Tue 23 Jun) ── -->
+          <p class="text-xs font-semibold text-muted-foreground" style="margin:8px 0 6px;letter-spacing:0.06em;">DAY 1 — TUESDAY 23 JUNE</p>
+
+          <details class="event-card">
+            <summary class="event-summary">
+              PZF Main Stage — Future Proof Money (SNB Vice Chair) &amp; UBS CEO
+              <span class="event-meta">Day 1</span>
+            </summary>
+            <div class="event-body">
+              <p style="font-size:0.82rem;font-weight:600;margin:12px 0 6px;">Dr Antoine Martin, Vice Chairman, Swiss National Bank:</p>
+              <ul class="ev-list" style="margin-top:4px;">
+                <li>No advantage seen in digital Swiss franc but learning from digital euro</li>
+                <li>Domestic retail: current system works; want instant payments</li>
+                <li>Cross-border: exploring with WC2B connecting instant payment systems</li>
+                <li>Wholesale: pushed toward new tech — worked with S6 — want central bank money at heart — considering synchronised settlement on-chain</li>
+                <li>Project Agora: cross-border wholesale payments, each bank doing KYC — Agora eliminating duplication — envision two parallel systems</li>
+              </ul>
+              <p style="font-size:0.82rem;font-weight:600;margin:14px 0 6px;">Sergio Ermotti, CEO, UBS:</p>
+              <ul class="ev-list" style="margin-top:4px;">
+                <li>AI agents: expect high failure rate but some will "exceed expectations exponentially" — want more efficient back office</li>
+                <li>Tokenisation of bonds and gold ongoing — part of Qivalis interoperable stablecoin project</li>
+                <li>Safety and soundness key — cost of transferring money excessive, based on tech 30–40 years old</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="event-card">
+            <summary class="event-summary">
+              BC4EU Transatlantic Forum
+              <span class="event-meta">Day 1 · Matthias</span>
+            </summary>
+            <div class="event-body">
+              <ul class="ev-list">
+                <li>Shared view: tokenisation will happen; unclear what EU/US can do to foster transition</li>
+                <li>Industry criticism: unauthorised firms (mainly Binance) still active in EU</li>
+                <li>Stablecoin debate more heated — multi-issuance and Tether enforcement</li>
+                <li>Tether asked to join BC4EU — significant board-level debate</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- ── DAY 2 (Wed 24 Jun) ── -->
+          <p class="text-xs font-semibold text-muted-foreground" style="margin:18px 0 6px;letter-spacing:0.06em;">DAY 2 — WEDNESDAY 24 JUNE</p>
+
+          <details class="event-card" open>
+            <summary class="event-summary">
+              PZF Roundtable — Tokenised Financial Markets
+              <span class="event-meta">Day 2 · Jordan</span>
+            </summary>
+            <div class="event-body">
+              <p style="font-size:0.82rem;font-weight:600;margin:12px 0 6px;">Key participants: BoE (Andrew Pustelnikov), MAS (Alan Lim), StanChart (Jennifer Lassiter), HSBC (John O'Neill), SWIFT (Shriyanka Hore), Visa (Tim Moncrieff)</p>
+              <ul class="ev-list">
+                <li><strong>BoE:</strong> Digital Securities Sandbox — <span class="pull-stat"><span class="n">16</span> exchanges</span> to live-issue. Working with PSR on tokenised assets on central bank balance sheet. Big supporters of LEI. Public-private endeavour to avoid fragmentation.</li>
+                <li><strong>MAS:</strong> Future of many tokenised deposits across venues — wholesale CBDC infrastructure for settlement — issuing MAS bill. Securities: consistency of representation via Project Guardian. Expect few different ledgers — focus on technical interop and institutional grade.</li>
+                <li><strong>StanChart:</strong> Only GSIB live across all assets — tokenised deposits, CBDC, stablecoin live later this year. Harmonisation around legal finality needed. "Not scalable when you bolt a fiat leg into an otherwise digital transaction."</li>
+                <li><strong>HSBC:</strong> Banks must step in and generate liquidity — central bank AND private bank layers must survive. StanChart and HSBC launching stablecoins in HK by year-end.</li>
+                <li><strong>SWIFT:</strong> "There is good friction — intermediaries take new forms tomorrow." Need interop beyond technical — legal framework, balance sheet protection.</li>
+              </ul>
+              <div class="quote-block">
+                "Trust is about more than who is operating the market — new rails don't remove the need for market integrity. Need verifiable credential ties to roles, asset eligibility, client status."
+                <span class="attr">— John O'Neill, HSBC</span>
+              </div>
+            </div>
+          </details>
+
+          <details class="event-card" open>
+            <summary class="event-summary">
+              PZF Roundtable — Global Stablecoin Regulatory Frameworks
+              <span class="event-meta">Day 2 · Jordan</span>
+            </summary>
+            <div class="event-body">
+              <p style="font-size:0.82rem;font-weight:600;margin:12px 0 6px;">Key participants: Circle (Patrick Hansen), BoE (Emma Butterworth)</p>
+              <ul class="ev-list">
+                <li><strong>Circle (Patrick Hansen):</strong> 3 dimensions of cross-border friction — (1) operating cross-border with limited flexibility, (2) is a stablecoin money? EU says crypto AND money, others differ, (3) how to treat foreign stablecoins — EURc equivalent under MiCA but unclear elsewhere</li>
+                <li>Variation in reserve composition, HQLA requirements, domestic presence, recovery planning</li>
+                <li><strong>BoE (Emma Butterworth):</strong> Stablecoins part of mixed money ecosystem — need equivalent protections if systemic. UK: systemic jointly regulated, all others FCA. 30% backing at central bank for immediate demands.</li>
+                <li><strong>Most innovative feature:</strong> liquidity facility for issuers to liquidate the 70% sovereign debt if private markets fail</li>
+                <li>Walked back holding limits — temp guardrail cap on issuance — <span class="pull-stat"><span class="n">~£40bn</span> cap</span></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="event-card">
+            <summary class="event-summary">
+              PZF Mainstage — Matthias Panel (w/ Kraken, Paxos)
+              <span class="event-meta">Day 2 · Matthias</span>
+            </summary>
+            <div class="event-body">
+              <ul class="ev-list">
+                <li>Key message: importance of ecosystem monitoring capabilities and supervisors using on-chain data for further market adoption</li>
+                <li>Governor of the Bank of Lithuania agreed publicly with Matthias's points</li>
+                <li>Panel alongside Kraken and Paxos — positioning with major industry players</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="event-card">
+            <summary class="event-summary">
+              PZF Mainstage — Simon Taylor: State of Stablecoins
+              <span class="event-meta">Day 2</span>
+            </summary>
+            <div class="event-body">
+              <ul class="ev-list">
+                <li>Crypto markets down but stablecoin volumes remain level → payments shift</li>
+                <li>EUR now <span class="pull-stat"><span class="n">~2%</span></span> of volume (from ~0%), more launching. 98% USD</li>
+                <li>B2B biggest use case, Asia-Pacific; beneficiaries in global south</li>
+                <li>Key distinction: stablecoins = open-loop, permissionless (on the move); tokenised deposits = within banks/clearing. <strong>Not substitutes — different use cases</strong></li>
+                <li>Not a deposit flight story — US banks have more deposits than ever</li>
+                <li>Correspondent banking for Tier 2/3 banks very expensive — stables as alternative</li>
+                <li>24/7 money loop: auto-exchange stables ↔ tokenised deposits</li>
+                <li>Mentions: Qivalis, SoFi</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="event-card">
+            <summary class="event-summary">
+              PZF Mainstage — Dante Disparte (Circle): Europe's Currency at a Crossroads
+              <span class="event-meta">Day 2</span>
+            </summary>
+            <div class="event-body">
+              <ul class="ev-list">
+                <li>EU went first on reg but all reference USD — European framework solving issues US still debating</li>
+                <li>Capital flight fears unwarranted — deposits are crowding IN</li>
+                <li>"Have we inadvertently created a CBDC?" — couple of big ironies</li>
+                <li>"Crypto needs banks more than the other way round"</li>
+                <li>Matthias bilateral: stablecoins are a global settlement asset including message — contradicts FATF guidance. Project Hamilton (Fed CBDC) requires congressional approval</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="event-card">
+            <summary class="event-summary">
+              PZF Mainstage — Tether Fireside Chat
+              <span class="event-meta">Day 2</span>
+            </summary>
+            <div class="event-body">
+              <ul class="ev-list">
+                <li>Paolo Ardoino: "Tether did more for financial inclusion than all NGOs ever" — received applause</li>
+                <li>"Proved we can redeem over 20% overnight — banks can't even do that"</li>
+                <li>4 billion financially excluded served</li>
+              </ul>
+              <div class="insight-box" style="margin-top:10px;">
+                <div class="tag">🔒 Behind the scenes</div>
+                <p>Tether actively seeking to shape MiCA 2, hired EU policy staff, asked to join BC4EU. If reserve policy changes, may re-enter EU directly. Matthias catch-up with EMEA lead next Wed.</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="event-card">
+            <summary class="event-summary">
+              PZF Workshop — TRM Labs: "AI and Blockchain" <span class="attr-tag comp">Competitor</span>
+              <span class="event-meta">Day 2 · Wed 3pm</span>
+            </summary>
+            <div class="event-body">
+              <p style="font-size:0.82rem;font-weight:600;margin:12px 0 6px;">Moderated by Liam Glennon (TRM, Head NA FIs). Panel: Louise Johnston (MasterCard), FINMA rep, FCA rep, Chris Brummer (Georgetown), Rene Michau (Standard Chartered)</p>
+              <ul class="ev-list">
+                <li><strong>MasterCard:</strong> AI for fraud detection + transaction monitoring at network level in real-time. Embedding risk controls in agentic commerce. Two trade-offs: data quality/cross-jurisdictional linking, explainability vs real-time models.</li>
+                <li><strong>Standard Chartered:</strong> GPUs for pricing, trading insights. Key framing: "Imagine a bank on public chains — can you prove you knew who owned the address, the agent had permission, and you didn't disclose PII?" Both compliance AND commercial problem.</li>
+                <li><strong>FINMA:</strong> Structured risk approach — don't treat all AI same. Shift from "what can I do with AI" to "getting it right." Not prescriptive — "show us how you manage your risk."</li>
+                <li><strong>Chris Brummer:</strong> Fiduciary duties decomposed into programmable constituent parts. More complex in securities law perimeter.</li>
+                <li><strong>FCA:</strong> Principles-based, outcomes-focused. Want to see how things work.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="event-card">
+            <summary class="event-summary">
+              PZF Closed-Door — Stripe Stablecoins Session
+              <span class="event-meta">Day 2 · Matthias</span>
+            </summary>
+            <div class="event-body">
+              <ul class="ev-list">
+                <li><strong>Ripple:</strong> EU makes multi-issuance an issue; should be free with equivalences. UK: local stablecoin gets some benefits.</li>
+                <li><strong>Paxos:</strong> Realtime reserve management across regimes is operationally hard. Redemption rights important in theory, unused in practice. 90% in CASPs, self-hosted estimated. "Compliance with many jurisdictions is so expensive we can't do this" → Tether. "GENIUS-compliant stables will drive tokenisation."</li>
+                <li><strong>Coinbase:</strong> Brazil, Canada discussing multi-issuance. Fear of Solaris-type action.</li>
+                <li><strong>Banking Circle:</strong> USDT highest demand — is MiCA working? Proof-of-reserve attestation can travel with transactions (BIS/MAS MVP).</li>
+                <li><strong>Amazon:</strong> 75% of EU SMEs trade in USD. FX cost is huge. Agentic + programmability are drivers. "Only if rails are regulated."</li>
+                <li><strong>Guernsey:</strong> For smaller jurisdictions, AML/travel rule is the biggest issue, not prudential.</li>
+                <li><strong>IMF:</strong> Mutual recognition or one framework not happening — but joint supervision could work.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="event-card">
+            <summary class="event-summary">
+              GBBC Roundtable — Capital Markets Risk Mitigation Framework <span class="attr-tag">Jordan</span>
+              <span class="event-meta">Day 2 · Wed 4–5:30pm</span>
+            </summary>
+            <div class="event-body">
+              <p style="font-size:0.82rem;font-weight:600;margin:12px 0 6px;">GBBC + Cardano Foundation · Facilitated by Oliver Wyman · Bahnhofquai 11, Zurich (off-site from PZF)</p>
+              <ul class="ev-list">
+                <li><strong>What it is:</strong> Industry-led initiative developing a risk management framework for secure adoption of public blockchain by regulated FIs. Currently in Phase 2 — addressing infrastructure risks (L1/L2 networks) and application risks (stablecoins, tokenised deposits, deposit tokens, digital asset securities).</li>
+                <li>Discussed framework with GBBC, Cardano Foundation, and key financial institution partners</li>
+                <li><strong>Post-roundtable:</strong> Spoke with GBBC rep Nilixia about Chainalysis's own ontology piece — explored what it might look like to pursue the ontology work intellectually with GBBC as a collaborative partner</li>
+                <li><strong>Andrew Turner inbound:</strong> Expressed interest in our ontology framework. His team is planning to publish a standard-setting piece of work for blockchain analytics — we are helpfully frontrunning this. Will follow up once our ontology framework is published this week and seek comments.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="event-card">
+            <summary class="event-summary">
+              GBBC / Cardano — Agentic Commerce Evening Event <span class="attr-tag">Jordan</span>
+              <span class="event-meta">Day 2 · Wed evening</span>
+            </summary>
+            <div class="event-body">
+              <p style="font-size:0.82rem;font-weight:600;margin:12px 0 6px;">Attendees included Circle, GLEIF, GBBC, Cardano Foundation, and others</p>
+              <ul class="ev-list">
+                <li>Delivered agentic commerce lines from GBBC panel the previous week — "Machine Sender Problem," 100M+ x402 transactions, blockchain as compliance advantage</li>
+                <li>Continued building the agentic finance narrative with the same community that gave us PZF tickets</li>
+                <li><strong>GFTN organisers:</strong> Discussed getting Chainalysis on the lineup for Singapore Fintech Festival for free — will keep the relationship warm and build toward SFF appearance</li>
+                <li><strong>Ethereum Foundation:</strong> Spoke with new hire (DMALs) who expressed interest in our ontology piece — potential channel into Ethereum ecosystem governance</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- ── DAY 3 (Thu 25 Jun) ── -->
+          <p class="text-xs font-semibold text-muted-foreground" style="margin:18px 0 6px;letter-spacing:0.06em;">DAY 3 — THURSDAY 25 JUNE</p>
+
+          <details class="event-card">
+            <summary class="event-summary">
+              PZF CEO Dialogue — "MiCA, GENIUS, CLARITY and the Global Race" <span class="attr-tag comp">Elliptic CEO</span>
+              <span class="event-meta">Day 3</span>
+            </summary>
+            <div class="event-body">
+              <p style="font-size:0.82rem;font-weight:600;margin:12px 0 6px;">Panellists: Brian Quintenz, Justin Slaughter (Paradigm), Lesley Chavkin (Ribbit), Stu Alderoty (Ripple), Vaida Česnulevičiūtė (Bank of Lithuania), Simone Maini (Elliptic)</p>
+              <ul class="ev-list">
+                <li><strong>Elliptic (Simone Maini):</strong> Digital asset risks moving from compliance to <strong>national security</strong></li>
+                <li><strong>Paradigm:</strong> Less than 20% chance of CLARITY in July</li>
+                <li><strong>Bank of Lithuania:</strong> CASPs part of financial markets, nothing unusual — strict rules. CMTs alive but IRTs not — MiCA review should ask why. Commercial energy going into payments not trading.</li>
+                <li><strong>Ripple:</strong> Distinction between regulation that protects customers (disclosure, AML) vs protectionism that protects incumbents. Operating in 60+ markets.</li>
+                <li><strong>Ribbit:</strong> "Design for divergence" — accept higher overheads of tailored global strategy. Convergence still far away.</li>
+                <li><strong>Securitize:</strong> Biggest TradFi players coming on stream, tokenisation gone to board room</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="event-card" open>
+            <summary class="event-summary">
+              IBM Showcase — Privacy Network <span class="attr-tag">Jordan only</span>
+              <span class="event-meta">Day 3 · Thu PM</span>
+            </summary>
+            <div class="event-body">
+              <div class="insight-box">
+                <div class="tag">🔒 Not public — strategic concern</div>
+                <p>IBM creating own privacy network on Hyperledger Fabric — same function as Canton Network. Deploying ZKPs, prioritising privacy with <strong>no real view to how third parties might demand visibility</strong>. Optimising for CBDC use case. IBM says central banks accept ZKPs and "it's up to banks to perform due diligence." <strong>Raises risk: who secures the perimeter?</strong> Creates real safety/soundness issues. This design pushes compliance entirely to bank-level with no supervisory access to aggregate flows.</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="event-card" open>
+            <summary class="event-summary">
+              BIS Side Event — Project Mandala <span class="attr-tag">Jordan only</span>
+              <span class="event-meta">Day 3 · Thu PM</span>
+            </summary>
+            <div class="event-body">
+              <ul class="ev-list">
+                <li><strong>Project Mandala:</strong> Compliance pre-validation for cross-border payments using ZKPs</li>
+                <li>FIs run a "Mandala node" connecting to existing compliance systems (sanctions screening, ML risk scoring)</li>
+                <li>Pre-validation happens BEFORE payment initiation — data exchanged peer-to-peer, checks run locally, cryptographic proofs generated</li>
+                <li>Proofs on-chain compatible — can be conditions for digital asset transfers</li>
+                <li>Re-verification at each hop WITHOUT re-running checks</li>
+                <li>Phase 2: multiple corridors, travel rule, risk scoring. <span class="pull-stat"><span class="n">7</span> central bank partners</span></li>
+                <li>Privacy-preserving: configurable ZKP or TEE-based proofs per check</li>
+                <li>Rules engine: jurisdiction-specific compliance in standardised format across nodes</li>
+              </ul>
+              <div class="insight-box" style="margin-top:10px;">
+                <div class="tag">🔒 Strategic opportunity</div>
+                <p>Mandala integrates with "existing compliance solutions" — this is exactly the integration point for Chainalysis products. If this scales, being the compliance system that Mandala nodes connect to is a significant opportunity. Separately, <strong>Project Atlas passed to DNB</strong> — only tracking aggregates, no clustering. Jordan discussed Atlas's approach to replicating on-chain intelligence for digital asset markets and obtained contact details for the project lead and the Dutch central bank partner to initiate a data-comparison conversation.</p>
+              </div>
+            </div>
+          </details>
+
+          <!-- ── WEBINAR ── -->
+          <p class="text-xs font-semibold text-muted-foreground" style="margin:18px 0 6px;letter-spacing:0.06em;">LATE JUNE — WEBINAR</p>
+
+          <details class="event-card">
+            <summary class="event-summary">
+              Notabene Webinar — "From Transition to Transformation: MiCA Grandfathering Ends" <span class="attr-tag">Matthias panellist</span>
+              <span class="event-meta">Late Jun</span>
+            </summary>
+            <div class="event-body">
+              <p style="font-size:0.82rem;font-weight:600;margin:12px 0 6px;">Panellists: Matthias B-L (Chainalysis), Michał Truszczyński (Bitpanda), Neil Samtani (VASPnet), Dea Markova (Fireblocks). Moderated by Catarina Veloso (Notabene).</p>
+              <ul class="ev-list">
+                <li><strong>MiCA as credible common baseline:</strong> Moved Europe from fragmentation, raised standards, created clearer route to market. Helped onboard more TradFi institutions because architecture is recognisable. Set a global benchmark.</li>
+                <li><strong>Authorisation geography:</strong> Germany, Netherlands, France, Malta, Cyprus account for ~60% of authorisations — reflects supervisory capacity and existing market depth, not accident. "What firms value is a hard but fair approach: clear expectations, serious scrutiny, a process that is demanding but intelligible."</li>
+                <li><strong>Europe is the biggest crypto market in 2025</strong> by on-chain value flows. Roughly half in stablecoins. Germany and France biggest, but Spain, Italy, Netherlands also material.</li>
+                <li><strong>On-chain analytics for stablecoin holder geography:</strong> 56–67% of activity flows through attributed exchanges where geographic estimation is possible. <span class="pull-stat"><span class="n">189M</span> wallet clusters</span> globally with geographic signals. Honest boundary: wallets that never touched a known service can't be estimated.</li>
+                <li><strong>Multi-issuance:</strong> Need to reduce regulatory friction and preserve global stablecoins while keeping guardrails on reserves, redemption, AML/CFT. EBA-NYDFS MoU is a building block.</li>
+                <li><strong>MiCA review — the key ask:</strong> Focus on strengthening supervisory capacity, not reopening the architecture. Supervisors using on-chain analytics can do "something much closer to 24/7 due diligence" than is possible in traditional finance. "The more supervisors can observe the market directly, the more effective and proportionate supervision becomes."</li>
+                <li><strong>DORA connection:</strong> Operational resilience now a governance question. DPRK-linked hackers stole $2B+ in 2025 — funds reportedly fund WMD programme. Continuous monitoring, not just periodic audits.</li>
+              </ul>
+              <div class="t-sources">Sources: <span class="src-pill">Notabene MiCA Webinar</span></div>
+              <div class="inform-line"><strong>→ Inform:</strong> <strong>EMEA Sales</strong> — 60% authorisation concentration data useful for client conversations. <strong>Product</strong> — 189M wallet clusters and 56–67% attribution rate are quotable product stats. <strong>Marketing</strong> — "24/7 due diligence" framing for supervisor-facing materials.</div>
+            </div>
+          </details>
+
+          <!-- ── THROUGHOUT PZF ── -->
+          <p class="text-xs font-semibold text-muted-foreground" style="margin:18px 0 6px;letter-spacing:0.06em;">THROUGHOUT PZF</p>
+
+          <details class="event-card">
+            <summary class="event-summary">
+              Matthias — Bilateral Conversations (12+) &amp; Dinner Intel
+              <span class="event-meta">23–25 Jun</span>
+            </summary>
+            <div class="event-body">
+              <ul class="ev-list">
+                <li><strong>SEC (Richard Gabbert, Chair Crypto Task Force):</strong> on-chain/off-chain data matching for market abuse; follow-up arranged in US with Chief of Staff Chris Rice</li>
+                <li><strong>FINMA (Matthias Obrecht, Jonas Prangenberg):</strong> CASPs supervision, market abuse use cases; Chainalysis presentation follow-up. Also discussed consultation submission.</li>
+                <li><strong>BoE (Tom Mutton, Sarah Breeden):</strong> Happy with systemic stables framework. Sarah: Lord's question about less intrusive approaches "was a big trigger." Tom not overseeing global stables (FMI) — only payments/FCA-regulated.</li>
+                <li><strong>IMF:</strong> Data gap analysis; stablecoin issuer data standards in development</li>
+                <li><strong>Ripple:</strong> Luxembourg regulator won't discuss EMT issuance — legal uncertainty over multi-issuance; need geolocation help for EU volume</li>
+                <li><strong>Bybit:</strong> Korea FSC → FIU access?; Pakistan market entry (Mykolas connection)</li>
+                <li><strong>Tether EMEA lead:</strong> catch-up next Wednesday</li>
+                <li><strong>Circle (Dante):</strong> Stablecoins = global settlement asset incl message; contradicts FATF guidance</li>
+                <li><strong>TUBITAK (Turkey):</strong> Building own analytics company — opportunity and competitive signal</li>
+                <li><strong>GFTN (MAHA):</strong> Tokenisation blueprint for jurisdictions; wants Chainalysis at SFF</li>
+                <li><strong>BMF (Melanie, AML):</strong> DeFi report finished, issues in 2 weeks. DeFi vs DiNo.</li>
+                <li><strong>GLEIF / SIMFONIA:</strong> Interoperable identity wallets — Digital ID vs KYC</li>
+                <li><strong>Robinhood (Arthur):</strong> Tokenised shares + prediction markets</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- ═══ ACTION TRACKER ═══ -->
+      <div>
+        <div class="sh">
+          <span class="sh-icon">🚀</span>
+          <h2 class="text-lg font-bold" style="margin:0;">Action Tracker</h2>
+        </div>
+
+        <div style="overflow-x:auto;margin-top:12px;">
+          <table class="track-table">
+            <thead>
+              <tr>
+                <th style="width:3%;">#</th>
+                <th style="width:28%;">Action</th>
+                <th style="width:24%;">Detail</th>
+                <th style="width:10%;">Owner</th>
+                <th style="width:9%;">Priority</th>
+                <th style="width:11%;">Deadline</th>
+                <th style="width:9%;">Source</th>
+                <th style="width:6%;">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="track-section"><td colspan="8">Immediate — This Week</td></tr>
+              <tr>
+                <td>1</td>
+                <td><strong>SEC follow-up — Gabbert meeting</strong></td>
+                <td>Arrange US meeting with Crypto Task Force Chair + Chris Rice. Prepare on-chain/off-chain data matching demo.</td>
+                <td>Matthias</td>
+                <td><span class="p-crit">CRITICAL</span></td>
+                <td>w/c 30 Jun</td>
+                <td>PZF dinner</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><strong>FCA consultations</strong> — Crypto Authorisation + Tokenisation</td>
+                <td>Finalise responses. Incorporate: HSBC credential-with-asset, BoE DSS, FINMA CASPs, StanChart "bolt-on fiat leg."</td>
+                <td>Jordan</td>
+                <td><span class="p-crit">CRITICAL</span></td>
+                <td>3 Jul</td>
+                <td>Consultation</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><strong>EEAS intelligence-sharing</strong> — respond to invitation</td>
+                <td>Propose structured arrangement. 21st sanctions package being shaped — crypto will feature. Highest-level EU sanctions channel.</td>
+                <td>Jordan</td>
+                <td><span class="p-crit">CRITICAL</span></td>
+                <td>w/c 30 Jun</td>
+                <td>RUSI Sanctions</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><strong>Tether EMEA catch-up</strong></td>
+                <td>MiCA 2 strategy, BC4EU membership, potential EU re-entry, compliance tooling.</td>
+                <td>Matthias</td>
+                <td><span class="p-high">HIGH</span></td>
+                <td>2 Jul (Wed)</td>
+                <td>PZF bilateral</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><strong>FINMA presentation</strong> — market abuse for CASPs</td>
+                <td>Follow up with Matthias Obrecht. Connect to consultation submission.</td>
+                <td>Matthias</td>
+                <td><span class="p-high">HIGH</span></td>
+                <td>w/c 30 Jun</td>
+                <td>PZF bilateral</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td><strong>DMC Taskforce Meeting 2</strong> — prep</td>
+                <td>Expand compliance interop working group proposal for Phase 2. PZF validated argument (HSBC, StanChart, BoE).</td>
+                <td>Jordan</td>
+                <td><span class="p-high">HIGH</span></td>
+                <td>Before Mtg 2</td>
+                <td>DMC Taskforce</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+
+              <tr>
+                <td>7</td>
+                <td><strong>Andrew Turner</strong> — ontology follow-up</td>
+                <td>Send ontology framework once published this week. Seek comments. His team planning standard-setting work for blockchain analytics — we are frontrunning. Align before they publish.</td>
+                <td>Jordan</td>
+                <td><span class="p-high">HIGH</span></td>
+                <td>This week</td>
+                <td>GBBC RMF RT</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+
+              <tr class="track-section"><td colspan="8">Near-Term — July</td></tr>
+              <tr>
+                <td>8</td>
+                <td><strong>Delisting migration analysis</strong> — publish</td>
+                <td>Committed at RUSI. No provider has published — first-mover advantage. Supports AMLA benchmarking positioning.</td>
+                <td>Jordan</td>
+                <td><span class="p-high">HIGH</span></td>
+                <td>Mid-Jul</td>
+                <td>RUSI Stablecoins</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td><strong>BIS Mandala</strong> — compliance integration positioning</td>
+                <td>Mandala integrates with "existing compliance solutions." 7 central banks, Phase 2 expanding. Early engagement.</td>
+                <td>Jordan</td>
+                <td><span class="p-high">HIGH</span></td>
+                <td>Mid-Jul</td>
+                <td>BIS Side Event</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td><strong>GBBC / Nilixia</strong> — ontology collaboration</td>
+                <td>Explore pursuing ontology work intellectually with GBBC. Aligns with RMF Phase 2 and Andrew Turner standard-setting.</td>
+                <td>Jordan</td>
+                <td><span class="p-med">MEDIUM</span></td>
+                <td>Jul</td>
+                <td>GBBC RMF RT</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td><strong>DNB / Project Atlas</strong> — data comparison</td>
+                <td>Contact Atlas lead + DNB partner (details obtained). Compare aggregates with Chainalysis clustering. Demonstrates granularity.</td>
+                <td>Jordan</td>
+                <td><span class="p-med">MEDIUM</span></td>
+                <td>Jul</td>
+                <td>BIS Side Event</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td><strong>Irish reps</strong> — EU Council presidency</td>
+                <td>3 Irish reps at RUSI. Presidency will shape 22nd sanctions package. CBI MiCA register (12 CASPs) as foundation.</td>
+                <td>Jordan</td>
+                <td><span class="p-med">MEDIUM</span></td>
+                <td>Jul</td>
+                <td>RUSI Sanctions</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td><strong>Ripple</strong> — geolocation &amp; multi-issuance</td>
+                <td>Paxos-style geolocation for EU volume. Help with Luxembourg regulatory positioning.</td>
+                <td>Matthias</td>
+                <td><span class="p-med">MEDIUM</span></td>
+                <td>Jul</td>
+                <td>PZF bilateral</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td><strong>GFTN / SFF</strong> — lineup + tokenisation blueprint</td>
+                <td>GFTN organisers discussed free lineup spot at SFF. Keep warm, build relationship. Also MAHA's blueprint invitation.</td>
+                <td>Jordan</td>
+                <td><span class="p-med">MEDIUM</span></td>
+                <td>Jul</td>
+                <td>GBBC evening</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td><strong>IBM privacy network</strong> — position paper</td>
+                <td>Contrast IBM/Canton (no visibility) vs Mandala (collaborative). Chainalysis fills supervisory gap.</td>
+                <td>Jordan</td>
+                <td><span class="p-med">MEDIUM</span></td>
+                <td>Jul</td>
+                <td>IBM Showcase</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td><strong>IMF stablecoin data standards</strong></td>
+                <td>Follow up on Data Gap Analysis. Evaluate Chainalysis data integration opportunity.</td>
+                <td>Matthias</td>
+                <td><span class="p-med">MEDIUM</span></td>
+                <td>Jul</td>
+                <td>PZF bilateral</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+              <tr>
+                <td>17</td>
+                <td><strong>FATF DeFi + ESMA prediction markets</strong> — monitor</td>
+                <td>Track publications. Prepare DINO classification positioning. Leverage FATF VACG Chair relationship.</td>
+                <td>Team</td>
+                <td><span class="p-med">MEDIUM</span></td>
+                <td>Ongoing</td>
+                <td>PZF bilateral</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+
+              <tr class="track-section"><td colspan="8">Near-Term — August</td></tr>
+              <tr>
+                <td>18</td>
+                <td><strong>"Machine Sender Problem"</strong> — position paper</td>
+                <td>Build on GBBC term. 100M+ x402 txns as evidence. EU AI Act full application 2 Aug. HMT + FPC flagged.</td>
+                <td>Jordan</td>
+                <td><span class="p-med">MEDIUM</span></td>
+                <td>2 Aug</td>
+                <td>GBBC Agentic</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+              <tr>
+                <td>19</td>
+                <td><strong>Bybit</strong> — Pakistan &amp; Korea market entry</td>
+                <td>Pakistan contacts (Mykolas). Korea FSC→FIU. Brief product/risk on ZCash institutional demand.</td>
+                <td>Matthias</td>
+                <td><span class="p-low">LOW</span></td>
+                <td>Aug</td>
+                <td>PZF bilateral</td>
+                <td><span class="status-cell"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ═══ CHANNELS ═══ -->
+      <div>
+        <div class="sh">
+          <span class="sh-icon">🤝</span>
+          <h2 class="text-lg font-bold" style="margin:0;">Channels Opened &amp; Relationships Deepened</h2>
+        </div>
+        <div style="margin-top:12px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px;">
+          <div style="padding:12px 14px;border-radius:8px;border:1px solid var(--border);background:var(--card);">
+            <p class="text-xs font-semibold text-muted-foreground" style="margin:0;text-transform:uppercase;">New Channels</p>
+            <ul class="text-sm" style="margin:6px 0 0;padding-left:16px;line-height:1.8;">
+              <li><strong>EEAS Sanctions Division</strong> — Brice de Schietere (invited intel sharing)</li>
+              <li><strong>SEC Crypto Task Force</strong> — Richard Gabbert (Chair)</li>
+              <li><strong>AMLA</strong> — positioned at inaugural conference</li>
+              <li><strong>FINMA</strong> — Innovation &amp; Emerging Tech</li>
+              <li><strong>GFTN</strong> — MAHA (tokenisation blueprint)</li>
+              <li><strong>TUBITAK</strong> — Turkey framework design</li>
+              <li><strong>Tether EMEA</strong> — MiCA 2 strategy</li>
+              <li><strong>DNB</strong> — Project Atlas data</li>
+              <li><strong>Robinhood</strong> — Arthur (tokenised shares)</li>
+              <li><strong>Ethereum Foundation</strong> — new hire, ontology interest</li>
+              <li><strong>Andrew Turner</strong> — blockchain analytics standard-setting</li>
+            </ul>
+          </div>
+          <div style="padding:12px 14px;border-radius:8px;border:1px solid var(--border);background:var(--card);">
+            <p class="text-xs font-semibold text-muted-foreground" style="margin:0;text-transform:uppercase;">Deepened</p>
+            <ul class="text-sm" style="margin:6px 0 0;padding-left:16px;line-height:1.8;">
+              <li><strong>DMC Taskforce</strong> — Phase 1 report inclusion, Meeting 2 coming</li>
+              <li><strong>RUSI / FCDO</strong> — Jamie Rainbow, ongoing HTX impact data</li>
+              <li><strong>BoE</strong> — Tom Mutton, Sarah Breeden</li>
+              <li><strong>IMF</strong> — stablecoin data standards</li>
+              <li><strong>Ripple</strong> — multi-issuance, geolocation</li>
+              <li><strong>Bybit</strong> — Pakistan, Korea entry</li>
+              <li><strong>Circle</strong> — Dante (settlement asset thesis)</li>
+              <li><strong>Paxos</strong> — reserve management</li>
+              <li><strong>Bank of Lithuania</strong> — Governor</li>
+              <li><strong>GBBC</strong> — Nilixia (ontology collaboration, RMF), PZF tickets</li>
+              <li><strong>Irish Government</strong> — 3 reps at RUSI (Council presidency)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ FOOTER ═══ -->
+      <div style="border-top:1px solid var(--border);padding-top:14px;margin-top:28px;">
+        <p class="text-xs text-muted-foreground" style="margin:0;">
+          Prepared by Chain · Sources: Previous readout (9–17 Jun), Jordan Wain field notes, Matthias B-L bilateral notes &amp; Google Doc, AMLA Conference readout, PZF session transcripts (TRM workshop, Elliptic panel, BIS Mandala), PZF 2026 Roundtable Booklet ·
+          <span class="pull-stat"><span class="n">293</span> consultations tracked</span>
+          <span class="pull-stat"><span class="n">10</span> responses submitted</span>
+          <span class="pull-stat"><span class="n">11</span> open</span>
+        </p>
+      </div>
+
+    </div>
+  </body>
+</html>
