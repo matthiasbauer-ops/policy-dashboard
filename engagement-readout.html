@@ -151,8 +151,47 @@
       }
       .pull-stat .n { color: var(--primary); font-weight: 700; }
 
-      /* ── Takeaway cards ── */
-      .takeaway {
+      /* ── Takeaway cards (collapsible) ── */
+      details.takeaway {
+        border-left: 3px solid var(--primary);
+        border-radius: 0 10px 10px 0;
+        background: var(--card);
+        border-top: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        overflow: hidden;
+      }
+      details.takeaway > summary {
+        padding: 14px 20px;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: background 0.15s;
+      }
+      details.takeaway > summary:hover { background: var(--muted); }
+      details.takeaway > summary::after {
+        content: '▸';
+        margin-left: auto;
+        font-size: 0.8rem;
+        color: var(--muted-foreground);
+        transition: transform 0.2s;
+        flex-shrink: 0;
+      }
+      details.takeaway[open] > summary::after { transform: rotate(90deg); }
+      details.takeaway > summary h4 { margin: 0; font-size: 0.9rem; }
+      details.takeaway .takeaway-body {
+        padding: 0 20px 16px;
+      }
+      .takeaway .t-detail, details.takeaway .t-detail {
+        margin: 0;
+        font-size: 0.84rem;
+        color: var(--muted-foreground);
+        line-height: 1.6;
+      }
+      /* Legacy non-collapsible fallback */
+      div.takeaway {
         padding: 16px 20px;
         border-left: 3px solid var(--primary);
         border-radius: 0 10px 10px 0;
@@ -161,13 +200,7 @@
         border-right: 1px solid var(--border);
         border-bottom: 1px solid var(--border);
       }
-      .takeaway h4 { margin: 0 0 8px; font-size: 0.95rem; }
-      .takeaway .t-detail {
-        margin: 0;
-        font-size: 0.84rem;
-        color: var(--muted-foreground);
-        line-height: 1.6;
-      }
+      div.takeaway h4 { margin: 0 0 8px; font-size: 0.95rem; }
 
       /* ── Insight boxes (not-public intel) ── */
       .insight-box {
@@ -702,18 +735,10 @@
           </div>
         </div>
 
-        <p class="text-xs font-semibold text-muted-foreground" style="text-transform:uppercase;letter-spacing:0.06em;margin:0 0 8px;">What we pushed — and what landed</p>
-        <p class="text-sm" style="margin:0 0 10px;line-height:1.7;">
-          We drove six arguments consistently across every room. Each one landed with measurable impact:
+        <p class="text-xs font-semibold text-muted-foreground" style="text-transform:uppercase;letter-spacing:0.06em;margin:0 0 8px;">What we pushed</p>
+        <p class="text-sm" style="margin:0 0 14px;line-height:1.7;">
+          Six arguments across every room: <strong>compliance designed into tokenisation</strong> (now in DMC Phase 1 report) · <strong>on-chain analytics for issuers and supervisors</strong> (FINMA + SEC requested follow-ups) · <strong>data quality as the differentiator</strong> (T1/T2 framework, ontology standard-setting) · <strong>compliance maturity</strong> (Garantex→HTX, 3→500K) · <strong>the Machine Sender Problem</strong> (100M+ x402 txns) · <strong>under-implementation not over-regulation</strong>.
         </p>
-        <ul style="margin:0 0 14px;padding-left:20px;font-size:0.84rem;line-height:1.8;color:var(--muted-foreground);">
-          <li><strong style="color:var(--foreground);">Compliance must be designed into tokenisation — not bolted on.</strong> DMC Taskforce secretariat had zero compliance in their draft. Our argument is now in the Phase 1 report. HSBC independently validated it at PZF: "investor protection will rely as much on the credential that travels with it as the asset."</li>
-          <li><strong style="color:var(--foreground);">On-chain analytics is what issuers and supervisors need.</strong> Pushed at RUSI, PZF, and AMLA. When SocGen asked why analytics providers differ, our T1/T2 framework was the only answer. Bank of Lithuania governor publicly agreed with Matthias. FINMA and SEC both requested follow-ups.</li>
-          <li><strong style="color:var(--foreground);">Data quality is the differentiator — and we should set the standard.</strong> T1/T2 (structural grouping vs entity attribution) gave regulators a framework nobody else offered. Ontology piece is frontrunning GBBC and Andrew Turner's convergent work. If AMLA sets analytics benchmarks, we defined them.</li>
-          <li><strong style="color:var(--foreground);">Compliance infrastructure has matured faster than policymakers realise.</strong> Garantex→HTX: 3 years of post-designation operation → 24-hour industry response. 3 addresses → 500K identifiable. Visibly shifted the room at RUSI.</li>
-          <li><strong style="color:var(--foreground);">AML frameworks assume a human sent the transaction. Agents break that.</strong> Jordan coined "The Machine Sender Problem" and backed it with 100M+ x402 transactions — the only empirical evidence in any room. MAS is already redesigning payments for agentic commerce.</li>
-          <li><strong style="color:var(--foreground);">"Under-implementation, not over-regulation."</strong> Reframed the competitiveness debate at RUSI. Proposed AMLA as ecosystem monitor ("no jurisdiction has done this yet"). Cut through the deregulation noise.</li>
-        </ul>
 
         <p class="text-xs font-semibold text-muted-foreground" style="text-transform:uppercase;letter-spacing:0.06em;margin:0 0 8px;">Access — where we were, competitors weren't</p>
         <p class="text-sm" style="margin:0 0 4px;line-height:1.7;">
@@ -812,8 +837,9 @@
 
         <div class="space-y-4" style="margin-top:14px;">
 
-          <div class="takeaway" style="border-left-color:var(--warning);border-left-width:4px;">
-            <h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> <span style="background:linear-gradient(90deg,var(--warning),var(--primary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800;">NEW</span> 1. Tokenisation and tokenised deposits are live — compliance infrastructure is the bottleneck, and it's ours to fill</h4>
+          <details class="takeaway" style="border-left-color:var(--warning);border-left-width:4px;">
+            <summary><h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> <span style="background:linear-gradient(90deg,var(--warning),var(--primary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800;">NEW</span> 1. Tokenisation and tokenised deposits are live — compliance infrastructure is the bottleneck, and it's ours to fill</h4></summary>
+            <div class="takeaway-body">
             <p class="t-detail">
               Tokenised bank deposits emerged as a distinct priority that deserves focus alongside stablecoins and securities tokenisation. The BoE Digital Securities Sandbox has <span class="pull-stat"><span class="n">16</span> exchanges</span> preparing to live-issue securities. StanChart — the only GSIB live across all asset types — described bolting a fiat leg onto digital transactions as <strong>"not scalable."</strong> StanChart and HSBC are both launching stablecoins in Hong Kong by year-end. SWIFT is running an MVP on tokenised deposits by end of June (messaging only, no settlement). MAS is issuing a wholesale CBDC bill for tokenised deposit settlement. UBS's Qivalis project is building interoperable stablecoins alongside tokenised bonds and gold.
             </p>
@@ -826,28 +852,34 @@
             </p>
             <div class="t-sources">Sources: <span class="src-pill">DMC Taskforce</span> <span class="src-pill">PZF Tokenised FM Roundtable</span> <span class="src-pill">PZF Main Stage (Simon Taylor, UBS CEO)</span> <span class="src-pill">Stripe Closed Door (Paxos, Banking Circle)</span> <span class="src-pill">Matthias bilaterals (SWIFT, GFTN, MAS)</span></div>
             <div class="inform-line"><strong>→ Inform:</strong> <strong>Product (critical)</strong> — credential-with-asset tooling + tokenised deposit compliance are immediate market needs. <strong>Sales</strong> — StanChart + HSBC HK near-term; DMC members are clients. <strong>Strategy</strong> — elevate tokenised deposits alongside stablecoins. <strong>BD</strong> — GFTN SFF invitation, SWIFT scaling.</div>
-          </div>
+            </div>
+          </details>
 
-          <div class="takeaway">
-            <h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> 2. Stablecoin frameworks are converging — but multi-issuance and cross-border friction remain unsolved</h4>
+          <details class="takeaway">
+            <summary><h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> 2. Stablecoin frameworks are converging — but multi-issuance and cross-border friction remain unsolved</h4></summary>
+            <div class="takeaway-body">
             <p class="t-detail">
               Three jurisdictions advancing simultaneously: UK (BoE systemic stablecoins), EU (MiCA / MiCA 2), US (GENIUS Act). The BoE's most innovative feature is a liquidity facility allowing issuers to liquidate 70% of sovereign debt reserves if private markets fail, with a walked-back holding limit and a ~£40bn issuance cap. Patrick Hansen (Circle) identified three cross-border friction dimensions: classification, treatment as money, and foreign stablecoin recognition. Multi-issuance is the key bottleneck — Ripple is blocked by Luxembourg regulators citing legal uncertainty; Coinbase flagged Brazil and Canada debating the same issue. Paxos observed redemption rights matter in theory but "nobody uses them in practice" and compliance with many jurisdictions is "so expensive we can't do this" — pointing directly at Tether. Paradigm's Justin Slaughter gave CLARITY <span class="pull-stat"><span class="n">&lt;20%</span> odds in July</span>.
             </p>
             <div class="t-sources">Sources: <span class="src-pill">PZF Stablecoin Frameworks RT</span> <span class="src-pill">Stripe Closed Door</span> <span class="src-pill">PZF CEO Dialogue</span> <span class="src-pill">RUSI Stablecoins Workshop</span> <span class="src-pill">Matthias bilaterals (BoE, Circle)</span></div>
             <div class="inform-line"><strong>→ Inform:</strong> <strong>Product</strong> — multi-issuance tracking, reserve monitoring. <strong>Legal</strong> — MiCA 2 reserve changes. <strong>EMEA Sales</strong> — Ripple geolocation opportunity. <strong>Research</strong> — BoE liquidity facility, CLARITY &lt;20%.</div>
-          </div>
+            </div>
+          </details>
 
-          <div class="takeaway">
-            <h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> 3. Privacy infrastructure is outpacing supervisory capability — architecture choices now determine compliance outcomes</h4>
+          <details class="takeaway">
+            <summary><h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> 3. Privacy infrastructure is outpacing supervisory capability — architecture choices now determine compliance outcomes</h4></summary>
+            <div class="takeaway-body">
             <p class="t-detail">
               Two contrasting ZKP models emerged. IBM is building a privacy network on Hyperledger Fabric with <strong>no view to third-party visibility</strong> — optimised for CBDC use cases, pushing compliance entirely to individual bank perimeters. BIS Project Mandala takes the opposite approach: peer-to-peer ZKP-based compliance pre-validation that integrates with existing compliance systems and allows re-verification of proofs at each hop without re-running checks. The Mandala architecture explicitly names "existing compliance solutions" as integration points — a direct Chainalysis opportunity. The contrast matters: privacy tech can either enable or undermine compliance depending on choices being made right now.
             </p>
             <div class="t-sources">Sources: <span class="src-pill">IBM Showcase (Jordan)</span> <span class="src-pill">BIS Side Event — Project Mandala (Jordan)</span></div>
             <div class="inform-line"><strong>→ Inform:</strong> <strong>Product</strong> — Mandala integration is a concrete opportunity (7 central banks). <strong>Research</strong> — IBM supervisory gap = our positioning. <strong>GovTech</strong> — DNB contacts obtained.</div>
-          </div>
+            </div>
+          </details>
 
-          <div class="takeaway">
-            <h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> 4. Regulators are actively seeking on-chain analytics capability</h4>
+          <details class="takeaway">
+            <summary><h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> 4. Regulators are actively seeking on-chain analytics capability</h4></summary>
+            <div class="takeaway-body">
             <p class="t-detail">
               AMLA used its first conference to position technology, analytics and AI at the centre of EU AML/CFT supervision — Commissioner Albuquerque signalled AMLA will lead globally including at FATF, and James Lee made the case for blockchain analytics on Panel 3. SEC Crypto Task Force Chair Richard Gabbert expressed strong interest in matching on-chain and off-chain data for market abuse detection, noting assets will be "multi-dimensional" requiring all venues to be monitored. FINMA's innovation team discussed market abuse use cases for CASPs and wants a follow-up Chainalysis presentation. Turkey's TUBITAK is building its own analytics — both opportunity and competitive signal. The Bank of Lithuania's governor publicly agreed with Matthias's points on supervisors using on-chain data for market adoption. IMF is developing stablecoin issuer data standards via their Data Gap Analysis. Standard Chartered's Rene Michau framed the problem perfectly at the PZF TRM workshop:
             </p>
@@ -857,34 +889,41 @@
             </div>
             <div class="t-sources">Sources: <span class="src-pill">AMLA Conference</span> <span class="src-pill">Matthias bilaterals (SEC, FINMA, TUBITAK, IMF)</span> <span class="src-pill">PZF Matthias Panel</span> <span class="src-pill">PZF Workshop — TRM Labs</span> <span class="src-pill">PZF CEO Dialogue</span></div>
             <div class="inform-line"><strong>→ Inform:</strong> <strong>GovTech/Sales</strong> — SEC, FINMA, AMLA are live opportunities. <strong>Marketing</strong> — publish T1/T2 + ontology before AMLA sets benchmarks. <strong>Product</strong> — TUBITAK building own analytics (competitive signal).</div>
-          </div>
+            </div>
+          </details>
 
-          <div class="takeaway">
-            <h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> 5. Market structure is splitting: retail dead, institutional surging, payments growing</h4>
+          <details class="takeaway">
+            <summary><h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> 5. Market structure is splitting: retail dead, institutional surging, payments growing</h4></summary>
+            <div class="takeaway-body">
             <p class="t-detail">
               Every exchange at PZF described retail as "effectively dead," yet institutional flows are picking up materially — one Swiss private bank contact reported sharply rising ZCash demand. Stablecoin volumes remain steady despite the crypto downturn, signalling a structural shift toward payments. EUR stablecoins now ~2% of volume (from near zero), with more launching. B2B cross-border is the biggest use case (Asia-Pacific, global south beneficiaries). US banks have more deposits than ever — not a deposit flight story. Correspondent banking for Tier 2/3 banks is very expensive, making stablecoins a genuine alternative.
             </p>
             <div class="t-sources">Sources: <span class="src-pill">PZF Main Stage (Simon Taylor)</span> <span class="src-pill">Matthias bilaterals</span> <span class="src-pill">PZF dinner intel</span></div>
             <div class="inform-line"><strong>→ Inform:</strong> <strong>Risk</strong> — ZCash institutional surge (privacy coin implications). <strong>Product</strong> — EUR stablecoin growth = more issuers. <strong>Sales</strong> — B2B cross-border APAC is where demand will come.</div>
-          </div>
+            </div>
+          </details>
 
-          <div class="takeaway">
-            <h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> 6. Agentic finance is the next regulatory frontier — and crypto is the rail</h4>
+          <details class="takeaway">
+            <summary><h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> 6. Agentic finance is the next regulatory frontier — and crypto is the rail</h4></summary>
+            <div class="takeaway-body">
             <p class="t-detail">
               MAS is revamping Singapore's payments system specifically for agentic payments. MasterCard is embedding AI risk controls into agentic commerce at network level. Multiple panels agreed crypto rails are the likely infrastructure for agent-to-agent value transfer, though activity today is minimal. UBS expects a high failure rate implementing agents but "some will exceed expectations exponentially." Amazon sees programmability and agentic use as key drivers for stablecoin adoption — "only if rails are regulated." Chris Brummer (Georgetown) noted that fiduciary duties may need to be decomposed into "programmable constituent parts."
             </p>
             <div class="t-sources">Sources: <span class="src-pill">Agentic Finance Panel (Wk 1)</span> <span class="src-pill">TRM Workshop (MasterCard)</span> <span class="src-pill">PZF Main Stage (UBS CEO)</span> <span class="src-pill">Stripe Closed Door (Amazon)</span> <span class="src-pill">Matthias bilaterals (MAS)</span></div>
             <div class="inform-line"><strong>→ Inform:</strong> <strong>Product</strong> — agent monitoring is an emerging requirement (MAS building now). <strong>Research</strong> — position paper before EU AI Act (2 Aug). <strong>Marketing</strong> — 100M+ x402 is unique and quotable.</div>
-          </div>
+            </div>
+          </details>
 
-          <div class="takeaway">
-            <h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> 7. Tether is repositioning for Europe — and MiCA 2 is the target</h4>
+          <details class="takeaway">
+            <summary><h4><span class="pri-tag p1" style="margin-right:6px;">P1</span> 7. Tether is repositioning for Europe — and MiCA 2 is the target</h4></summary>
+            <div class="takeaway-body">
             <p class="t-detail">
               Tether has hired local EU policy and gov affairs staff and asked to join BC4EU — causing board-level debate. If MiCA 2 removes obligatory bank deposits from reserve requirements, Tether may re-enter the EU directly and seek to shape the regulation. On stage, Tether CEO claimed "we did more for financial inclusion than all NGOs" and "proved we can redeem 20% overnight — banks can't do that." Behind the scenes, there is industry consensus that USDT has the highest demand (Banking Circle) — raising the question of whether MiCA is working as intended.
             </p>
             <div class="t-sources">Sources: <span class="src-pill">PZF Tether Fireside</span> <span class="src-pill">BC4EU Transatlantic Forum</span> <span class="src-pill">Stripe Closed Door (Banking Circle)</span> <span class="src-pill">Matthias bilaterals (Tether EMEA)</span></div>
             <div class="inform-line"><strong>→ Inform:</strong> <strong>CS</strong> — Tether is a client sensitivity; MiCA 2 = new tooling demand. <strong>EMEA Sales</strong> — AMF authorising Binance (French opportunity). <strong>Legal</strong> — MiCA 2 reserve changes reshape EU landscape.</div>
-          </div>
+            </div>
+          </details>
         </div>
         </div>
       </details>
