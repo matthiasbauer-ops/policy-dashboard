@@ -508,6 +508,73 @@
       }
       .inform-line strong { color: var(--foreground); }
 
+      /* ── Collapsible sections ── */
+      details.section-collapse {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--card);
+        overflow: hidden;
+      }
+      details.section-collapse > summary {
+        padding: 14px 20px;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: background 0.15s;
+      }
+      details.section-collapse > summary:hover { background: var(--muted); }
+      details.section-collapse > summary::before {
+        content: '▸';
+        font-size: 0.9rem;
+        transition: transform 0.2s;
+        color: var(--muted-foreground);
+        flex-shrink: 0;
+      }
+      details.section-collapse[open] > summary::before { transform: rotate(90deg); }
+      details.section-collapse > summary .sec-count {
+        margin-left: auto;
+        font-size: 0.72rem;
+        font-weight: 500;
+        color: var(--muted-foreground);
+        background: var(--muted);
+        padding: 2px 10px;
+        border-radius: 999px;
+      }
+      details.section-collapse > .section-body {
+        padding: 0 20px 20px;
+        border-top: 1px solid var(--border);
+      }
+
+      /* ── Quick nav ── */
+      .quick-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 0;
+      }
+      .quick-nav a {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 5px 12px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        font-size: 0.78rem;
+        font-weight: 500;
+        color: var(--foreground);
+        text-decoration: none;
+        transition: background 0.15s;
+      }
+      .quick-nav a:hover { background: var(--muted); }
+      .quick-nav .nav-icon { font-size: 0.85rem; }
+
+      html { scroll-behavior: smooth; }
+
       /* ── Sensitivity box ── */
       .sensitivity-box {
         padding: 10px 14px;
@@ -642,13 +709,24 @@
         </p>
       </div>
 
+      <!-- ═══ QUICK NAV ═══ -->
+      <div class="quick-nav">
+        <a href="#priorities"><span class="nav-icon">🔺</span> Priorities</a>
+        <a href="#takeaways"><span class="nav-icon">🎯</span> Takeaways</a>
+        <a href="#insights"><span class="nav-icon">🔒</span> Insights</a>
+        <a href="#competitive"><span class="nav-icon">⚔️</span> Competitive</a>
+        <a href="#events"><span class="nav-icon">📋</span> Event Detail</a>
+        <a href="#actions"><span class="nav-icon">🚀</span> Actions</a>
+        <a href="#channels"><span class="nav-icon">🤝</span> Channels</a>
+      </div>
+
       <!-- ═══ PRIORITY MAPPING ═══ -->
-      <div>
-        <div class="sh">
-          <span class="sh-icon">🔺</span>
-          <h2 class="text-lg font-bold" style="margin:0;">Priority Mapping</h2>
-        </div>
-        <p class="text-xs text-muted-foreground" style="margin-top:2px;">How the intelligence maps to our strategic priorities — ranked by urgency and impact</p>
+      <details class="section-collapse" id="priorities" open>
+        <summary>
+          <span>🔺</span> Priority Mapping
+          <span class="sec-count">P1 × 6 · P2 × 2 · P3 × 2</span>
+        </summary>
+        <div class="section-body">
 
         <div class="pri-grid">
           <div class="pri-bucket">
@@ -709,15 +787,16 @@
             </div>
           </div>
         </div>
-      </div>
+        </div>
+      </details>
 
       <!-- ═══ STRATEGIC TAKEAWAYS ═══ -->
-      <div>
-        <div class="sh">
-          <span class="sh-icon">🎯</span>
-          <h2 class="text-lg font-bold" style="margin:0;">Strategic Takeaways</h2>
-        </div>
-        <p class="text-xs text-muted-foreground" style="margin-top:2px;">Cross-cutting themes — ranked by priority. Each includes internal inform recommendations.</p>
+      <details class="section-collapse" id="takeaways" open>
+        <summary>
+          <span>🎯</span> Strategic Takeaways
+          <span class="sec-count">7 cross-cutting themes</span>
+        </summary>
+        <div class="section-body">
 
         <div class="space-y-4" style="margin-top:14px;">
 
@@ -795,15 +874,16 @@
             <div class="inform-line"><strong>→ Inform:</strong> <strong>CS</strong> — Tether is a client sensitivity; MiCA 2 = new tooling demand. <strong>EMEA Sales</strong> — AMF authorising Binance (French opportunity). <strong>Legal</strong> — MiCA 2 reserve changes reshape EU landscape.</div>
           </div>
         </div>
-      </div>
+        </div>
+      </details>
 
       <!-- ═══ INSIGHTS NOT AVAILABLE ONLINE ═══ -->
-      <div>
-        <div class="sh">
-          <span class="sh-icon">🔒</span>
-          <h2 class="text-lg font-bold" style="margin:0;">Insights Not Available Online</h2>
-        </div>
-        <p class="text-xs text-muted-foreground" style="margin-top:2px;">Grouped by strategic priority — from closed roundtables, bilaterals, and dinners</p>
+      <details class="section-collapse" id="insights">
+        <summary>
+          <span>🔒</span> Insights Not Available Online
+          <span class="sec-count">8 items · grouped by priority</span>
+        </summary>
+        <div class="section-body">
 
         <!-- Crypto & Stablecoin -->
         <p class="text-xs font-semibold" style="margin:18px 0 8px;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted-foreground);"><span class="pri-tag p1" style="margin-right:6px;">P1</span> Crypto &amp; Stablecoin</p>
@@ -851,15 +931,17 @@
             <p><strong>No supervisory visibility.</strong> Hyperledger Fabric with ZKPs, optimised for CBDC. No third-party access — "up to banks to perform due diligence." Pushes compliance to bank perimeters. Who secures the perimeter?</p>
           </div>
         </div>
-      </div>
+        </div>
+      </details>
 
       <!-- ═══ COMPETITIVE POSITIONING ═══ -->
-      <div>
-        <div class="sh">
-          <span class="sh-icon">⚔️</span>
-          <h2 class="text-lg font-bold" style="margin:0;">Competitive Positioning</h2>
-        </div>
-        <p class="text-xs text-muted-foreground" style="margin:2px 0 14px;">Neither competitor was in the same PZF roundtables as Jordan or Matthias. At RUSI, all vendors operated as research authorities — collaborative, not competitive.</p>
+      <details class="section-collapse" id="competitive">
+        <summary>
+          <span>⚔️</span> Competitive Positioning
+          <span class="sec-count">Elliptic · TRM · Crystal</span>
+        </summary>
+        <div class="section-body">
+        <p class="text-xs text-muted-foreground" style="margin:10px 0 14px;">Neither competitor was in the same PZF roundtables as Jordan or Matthias. At RUSI, all vendors operated as research authorities — collaborative, not competitive.</p>
 
         <table class="comp-table">
           <thead>
@@ -901,14 +983,16 @@
             </tr>
           </tbody>
         </table>
-      </div>
+        </div>
+      </details>
 
       <!-- ═══ EVENT DETAIL ═══ -->
-      <div>
-        <div class="sh">
-          <span class="sh-icon">📋</span>
-          <h2 class="text-lg font-bold" style="margin:0;">Event Detail</h2>
-        </div>
+      <details class="section-collapse" id="events">
+        <summary>
+          <span>📋</span> Event Detail
+          <span class="sec-count">15 events · Week 1 + Week 2</span>
+        </summary>
+        <div class="section-body">
 
         <div class="week-div">Week 1 — 9–17 June · London &amp; Frankfurt</div>
 
@@ -1354,14 +1438,16 @@
             </div>
           </details>
         </div>
-      </div>
+        </div>
+      </details>
 
       <!-- ═══ ACTION TRACKER ═══ -->
-      <div>
-        <div class="sh">
-          <span class="sh-icon">🚀</span>
-          <h2 class="text-lg font-bold" style="margin:0;">Action Tracker</h2>
-        </div>
+      <details class="section-collapse" id="actions">
+        <summary>
+          <span>🚀</span> Action Tracker
+          <span class="sec-count">19 actions · 7 immediate</span>
+        </summary>
+        <div class="section-body">
 
         <div style="overflow-x:auto;margin-top:12px;">
           <table class="track-table">
@@ -1577,14 +1663,16 @@
             </tbody>
           </table>
         </div>
-      </div>
+        </div>
+      </details>
 
       <!-- ═══ CHANNELS ═══ -->
-      <div>
-        <div class="sh">
-          <span class="sh-icon">🤝</span>
-          <h2 class="text-lg font-bold" style="margin:0;">Channels Opened &amp; Relationships Deepened</h2>
-        </div>
+      <details class="section-collapse" id="channels">
+        <summary>
+          <span>🤝</span> Channels Opened &amp; Relationships Deepened
+          <span class="sec-count">11 new · 11 deepened</span>
+        </summary>
+        <div class="section-body">
         <div style="margin-top:12px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px;">
           <div style="padding:12px 14px;border-radius:8px;border:1px solid var(--border);background:var(--card);">
             <p class="text-xs font-semibold text-muted-foreground" style="margin:0;text-transform:uppercase;">New Channels</p>
@@ -1619,7 +1707,8 @@
             </ul>
           </div>
         </div>
-      </div>
+        </div>
+      </details>
 
       <!-- ═══ FOOTER ═══ -->
       <div style="border-top:1px solid var(--border);padding-top:14px;margin-top:28px;">
