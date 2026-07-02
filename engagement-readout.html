@@ -438,7 +438,26 @@
         border: 2px solid var(--border);
         display: inline-block;
         vertical-align: middle;
+        cursor: pointer;
+        transition: all 0.15s;
+        position: relative;
       }
+      .status-cell:hover { border-color: var(--primary); }
+      .status-cell.done {
+        background: var(--success);
+        border-color: var(--success);
+      }
+      .status-cell.done::after {
+        content: '✓';
+        color: #fff;
+        font-size: 0.7rem;
+        font-weight: 700;
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      tr.row-done td { opacity: 0.5; }
+      tr.row-done td:last-child { opacity: 1; }
       .track-section td { 
         background: var(--muted); 
         font-weight: 700; 
@@ -1714,5 +1733,32 @@
       </div>
 
     </div>
+  <script>
+    // Action tracker: clickable checkboxes with localStorage persistence
+    document.addEventListener('DOMContentLoaded', function() {
+      const KEY = 'readout-actions-done';
+      const saved = JSON.parse(localStorage.getItem(KEY) || '{}');
+
+      document.querySelectorAll('.status-cell').forEach(function(cell, i) {
+        // Restore saved state
+        if (saved[i]) {
+          cell.classList.add('done');
+          cell.closest('tr').classList.add('row-done');
+        }
+
+        cell.addEventListener('click', function() {
+          cell.classList.toggle('done');
+          cell.closest('tr').classList.toggle('row-done');
+
+          // Save to localStorage
+          const state = {};
+          document.querySelectorAll('.status-cell').forEach(function(c, j) {
+            if (c.classList.contains('done')) state[j] = true;
+          });
+          localStorage.setItem(KEY, JSON.stringify(state));
+        });
+      });
+    });
+  </script>
   </body>
 </html>
